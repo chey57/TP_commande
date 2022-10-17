@@ -145,7 +145,6 @@ int main(void)
 	  				  argv[argc++] = token;
 	  				  token = strtok(NULL, " ");
 	  			  }
-
 	  			  idx_cmd = 0;
 	  			  newCmdReady = 1;
 	  			  break;
@@ -176,6 +175,30 @@ int main(void)
 	  		  else if(strcmp(argv[0],"get")==0)
 	  		  {
 	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
+	  		  }
+	  		  else if (strcmp(argv[0],"help")==0){
+	  			  sprintf(uartTxBuffer," set PA5\r\n get\r\n start\r\n stop\r\n pinout\r\n");
+	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 64, HAL_MAX_DELAY);
+	  			  for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
+	  				  uartTxBuffer[i]=0;
+	  			  }
+
+	  		  }
+	  		  else if (strcmp(argv[0],"pinout")==0){
+	  			  sprintf(uartTxBuffer," PA2:UART TX\r\n PA3:UART RX\r\n PA5:LED\r\n PA8:TIM1_CH1\r\n");
+	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 64, HAL_MAX_DELAY);
+	  			  for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
+	  			  	  uartTxBuffer[i]=0; //PA9:TIM1_CH2\r\n PA11:TIM1_CH1N\r\n PA12:TIM1_CH2N\r\n
+	  			  }
+
+	  		  }
+	  		  else if (strcmp(argv[0],"start")==0){
+	  			  sprintf(uartTxBuffer,"Power ON\r\n",atoi(argv[2]));
+	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 32, HAL_MAX_DELAY);
+	  		  }
+	  		  else if (strcmp(argv[0],"stop")==0){
+	  			  sprintf(uartTxBuffer,"Power OFF\r\n",atoi(argv[2]));
+	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 32, HAL_MAX_DELAY);
 	  		  }
 	  		  else{
 	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
