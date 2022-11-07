@@ -1,27 +1,29 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2022 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2022 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "string.h"
+#include "stdio.h"
+#include "stdlib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -62,9 +64,14 @@ uint8_t started[]=
 		"\r\n";
 uint8_t newline[]="\r\n";
 uint8_t cmdNotFound[]="Command not found\r\n";
+uint8_t help[];
+uint8_t pinout[];
+uint8_t powerOn[];
+uint8_t powerOff[];
 uint32_t uartRxReceived;
 uint8_t uartRxBuffer[UART_RX_BUFFER_SIZE];
 uint8_t uartTxBuffer[UART_TX_BUFFER_SIZE];
+uint8_t stringSize;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,6 +101,7 @@ int main(void)
 	int		 	argc = 0;
 	char*		token;
 	int 		newCmdReady = 0;
+	int 		alpha = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -117,99 +125,136 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  memset(argv,NULL,MAX_ARGS*sizeof(char*));
-  memset(cmdBuffer,NULL,CMD_BUFFER_SIZE*sizeof(char));
-  memset(uartRxBuffer,NULL,UART_RX_BUFFER_SIZE*sizeof(char));
-  memset(uartTxBuffer,NULL,UART_TX_BUFFER_SIZE*sizeof(char));
 
-  HAL_UART_Receive_IT(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE);
-  HAL_Delay(10);
-  HAL_UART_Transmit(&huart2, started, sizeof(started), HAL_MAX_DELAY);
-  HAL_UART_Transmit(&huart2, prompt, sizeof(prompt), HAL_MAX_DELAY);
+  // POUR LE SHELL
+	memset(argv,NULL,MAX_ARGS*sizeof(char*));
+	memset(cmdBuffer,NULL,CMD_BUFFER_SIZE*sizeof(char));
+	memset(uartRxBuffer,NULL,UART_RX_BUFFER_SIZE*sizeof(char));
+	memset(uartTxBuffer,NULL,UART_TX_BUFFER_SIZE*sizeof(char));
+
+	HAL_UART_Receive_IT(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE);
+	HAL_Delay(10);
+	HAL_UART_Transmit(&huart2, started, sizeof(started), HAL_MAX_DELAY);
+	HAL_UART_Transmit(&huart2, prompt, sizeof(prompt), HAL_MAX_DELAY);
+ // FIN POUR LE SHELL
+
+ // init PWM
+
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-	  // uartRxReceived is set to 1 when a new character is received on uart 1
-	  	  if(uartRxReceived){
-	  		  switch(uartRxBuffer[0]){
-	  		  // Nouvelle ligne, instruction à traiter
-	  		  case ASCII_CR:
-	  			  HAL_UART_Transmit(&huart2, newline, sizeof(newline), HAL_MAX_DELAY);
-	  			  cmdBuffer[idx_cmd] = '\0';
-	  			  argc = 0;
-	  			  token = strtok(cmdBuffer, " ");
-	  			  while(token!=NULL){
-	  				  argv[argc++] = token;
-	  				  token = strtok(NULL, " ");
-	  			  }
-	  			  idx_cmd = 0;
-	  			  newCmdReady = 1;
-	  			  break;
-	  		  // Suppression du dernier caractère
-	  		  case ASCII_DEL:
-	  			  cmdBuffer[idx_cmd--] = '\0';
-	  			  HAL_UART_Transmit(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE, HAL_MAX_DELAY);
-	  			  break;
-	  	      // Nouveau caractère
-	  		  default:
-	  			  cmdBuffer[idx_cmd++] = uartRxBuffer[0];
-	  			  HAL_UART_Transmit(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE, HAL_MAX_DELAY);
-	  		  }
-	  		  uartRxReceived = 0;
-	  	  }
+	while (1)
+	{
 
-	  	  if(newCmdReady){
-	  		  if(strcmp(argv[0],"set")==0){
-	  			  if(strcmp(argv[1],"PA5")==0){
-	  				  HAL_GPIO_WritePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin, atoi(argv[2]));
-	  				  sprintf(uartTxBuffer,"Switch on/off led : %d\r\n",atoi(argv[2]));
-	  				  HAL_UART_Transmit(&huart2, uartTxBuffer, 32, HAL_MAX_DELAY);
-	  			  }
-	  			  else{
-	  				  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
-	  			  }
-	  		  }
-	  		  else if(strcmp(argv[0],"get")==0)
-	  		  {
-	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
-	  		  }
-	  		  else if (strcmp(argv[0],"help")==0){
-	  			  sprintf(uartTxBuffer," set PA5\r\n get\r\n start\r\n stop\r\n pinout\r\n");
-	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 64, HAL_MAX_DELAY);
-	  			  for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
-	  				  uartTxBuffer[i]=0;
-	  			  }
+/******************** BEGIN SHELL **************************/
 
-	  		  }
-	  		  else if (strcmp(argv[0],"pinout")==0){
-	  			  sprintf(uartTxBuffer," PA2:UART TX\r\n PA3:UART RX\r\n PA5:LED\r\n PA8:TIM1_CH1\r\n");
-	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 64, HAL_MAX_DELAY);
-	  			  for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
-	  			  	  uartTxBuffer[i]=0; //PA9:TIM1_CH2\r\n PA11:TIM1_CH1N\r\n PA12:TIM1_CH2N\r\n
-	  			  }
+		// uartRxReceived is set to 1 when a new character is received on uart 1
+		if(uartRxReceived){
+			switch(uartRxBuffer[0]){
+			// Nouvelle ligne, instruction à traiter
+			case ASCII_CR:
+				HAL_UART_Transmit(&huart2, newline, sizeof(newline), HAL_MAX_DELAY);
+				cmdBuffer[idx_cmd] = '\0';
+				argc = 0;
+				token = strtok(cmdBuffer, " ");
+				while(token!=NULL){
+					argv[argc++] = token;
+					token = strtok(NULL, " ");
+				}
+				idx_cmd = 0;
+				newCmdReady = 1;
+				break;
+				// Suppression du dernier caractère
+			case ASCII_DEL:
+				cmdBuffer[idx_cmd--] = '\0';
+				HAL_UART_Transmit(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE, HAL_MAX_DELAY);
+				break;
+				// Nouveau caractère
+			default:
+				cmdBuffer[idx_cmd++] = uartRxBuffer[0];
+				HAL_UART_Transmit(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE, HAL_MAX_DELAY);
+			}
+			uartRxReceived = 0;
+		}
 
-	  		  }
-	  		  else if (strcmp(argv[0],"start")==0){
-	  			  sprintf(uartTxBuffer,"Power ON\r\n",atoi(argv[2]));
-	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 32, HAL_MAX_DELAY);
-	  		  }
-	  		  else if (strcmp(argv[0],"stop")==0){
-	  			  sprintf(uartTxBuffer,"Power OFF\r\n",atoi(argv[2]));
-	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, 32, HAL_MAX_DELAY);
-	  		  }
-	  		  else{
-	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
-	  		  }
-	  			  HAL_UART_Transmit(&huart2, prompt, sizeof(prompt), HAL_MAX_DELAY);
-	  			  newCmdReady = 0;
-	  	  }
+		if(newCmdReady){
+			if(strcmp(argv[0],"set")==0){
+				if(strcmp(argv[1],"PA5")==0){
+					HAL_GPIO_WritePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin, atoi(argv[2]));
+					stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Switch on/off led : %d\r\n",atoi(argv[2]));
+					HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+				}
+				else{
+					HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
+				}
+			}
+			else if(strcmp(argv[0],"get")==0)
+			{
+				HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
+			}
+			else if (strcmp(argv[0],"help")==0){
+				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE," set PA5\r\n get\r\n start\r\n stop\r\n pinout\r\n");
+				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+				for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
+					uartTxBuffer[i]=0;
+				}
+
+			}
+			else if (strcmp(argv[0],"pinout")==0){
+				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE, " PA2:UART TX\r\n PA3:UART RX\r\n PA5:LED\r\n PA8:TIM1_CH1\r\n");
+				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+				for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
+					uartTxBuffer[i]=0;
+				}
+				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE," PA9:TIM1_CH2\r\n PA11:TIM1_CH1N\r\n PA12:TIM1_CH2N\r\n");
+				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+
+			}
+			else if (strcmp(argv[0],"start")==0){
+
+				//HAL_GPIO_WritePin(GPIO, GPIO_Pin, PinState);
+
+				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Power ON\r\n",atoi(argv[2]));
+				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+			}
+			else if (strcmp(argv[0],"stop")==0){
+				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Power OFF\r\n",atoi(argv[2]));
+				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+			}
+			else if(strcmp(argv[0],"alpha")==0){
+				alpha = atoi(argv[1]);
+				TIM1->CCR1=(5312*alpha)/100;
+				TIM1->CCR2=(5312-TIM1->CCR1);
+			}
+			else{
+				HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
+			}
+			HAL_UART_Transmit(&huart2, prompt, sizeof(prompt), HAL_MAX_DELAY);
+			newCmdReady = 0;
+		}
+
+		/*********************** END SHELL *****************************/
+
+		/*********************** BEGIN ASSERV **************************/
+
+
+
+
+		/*********************** END ASSERV ****************************/
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+
+
+	}
   /* USER CODE END 3 */
 }
 
@@ -280,8 +325,8 @@ static void MX_TIM1_Init(void)
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 0;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 65535;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED1;
+  htim1.Init.Period = 5311;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -307,6 +352,7 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
+  sConfigOC.Pulse = 1328;
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
@@ -314,7 +360,7 @@ static void MX_TIM1_Init(void)
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
-  sBreakDeadTimeConfig.DeadTime = 0;
+  sBreakDeadTimeConfig.DeadTime = 207;
   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
   sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
   sBreakDeadTimeConfig.BreakFilter = 0;
@@ -398,6 +444,9 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : BLUE_BUTTON_Pin */
@@ -405,6 +454,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BLUE_BUTTON_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PC0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : GREEN_LED_Pin */
   GPIO_InitStruct.Pin = GREEN_LED_Pin;
@@ -450,11 +506,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1)
+	{
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
@@ -469,7 +525,7 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
+	/* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
