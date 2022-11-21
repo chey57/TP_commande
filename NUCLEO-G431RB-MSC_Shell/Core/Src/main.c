@@ -80,7 +80,7 @@ uint8_t uartRxBuffer[UART_RX_BUFFER_SIZE];
 uint8_t uartTxBuffer[UART_TX_BUFFER_SIZE];
 uint8_t stringSize;
 
-uint32_t ADC_Buffer[20];
+uint16_t ADC_Buffer[ADC_BUF_SIZE];
 
 /* USER CODE END PV */
 
@@ -115,6 +115,13 @@ int main(void)
 	char*		token;
 	int 		newCmdReady = 0;
 	int 		alpha = 0;
+	int 		sortie_ADC_numerique = 0;
+	int 		moyenne_sortie_ADC_numerique =0;
+	float 		tension_sortie_hacheur = 0;
+	float 		courant = 0;
+
+
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -289,17 +296,18 @@ int main(void)
 			}
 			else if(strcmp(argv[0],"ADC")==0){
 
-				int courant=0;
-
 				for(int i=0;i<20;i++){
-					courant = courant + (int)(ADC_Buffer[i]);
+					sortie_ADC_numerique = sortie_ADC_numerique + (int)(ADC_Buffer[i]);
 				}
-				courant = courant/20;
+				moyenne_sortie_ADC_numerique = sortie_ADC_numerique/20;
+				tension_sortie_hacheur = moyenne_sortie_ADC_numerique * 3.3 / 4095;
+				courant = (tension_sortie_hacheur -2.53)*12;
 
-				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"%d \r\n", courant);
+				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Le courant dans la phase RED vaut : %.2f A \r\n", courant);
 				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
 
-				printf("Le courant dans la phase RED vaut : %d A \r\n", courant);
+				sortie_ADC_numerique =0;
+
 			}
 			else{
 				HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
@@ -411,7 +419,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_EXTERNALTRIG_T2_TRGO;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   hadc1.Init.OversamplingMode = DISABLE;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
@@ -554,8 +562,8 @@ static void MX_TIM2_Init(void)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_ENABLE;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
@@ -688,8 +696,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-	if(HAL_ADC_Stop_DMA(&hadc1) != HAL_OK)
-		printf("probleme avec DMA Stop\r\n");
 
 }
 

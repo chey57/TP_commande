@@ -1,4 +1,4 @@
-# TP_commande
+# TP_commande : Quentin ROLLAND et Cheyenne PEREZ 
 
 1ère séance : GIT + tp jusqu'à "Console UART"
 
@@ -10,4 +10,7 @@
 	6.5 Définition de la vitesse : fait avec l'UART (ajout de la condition si alpha est supérieur à 100)
 	7.1 Commande de l'ADC entamée : initialisation de l'ADC, DMA et Timer 2, création de la commande dans 
 	le shell. Pour l'instant le retour de la mesure retourne 0. Il faudra vérifier la cohérence de la valeur
-	récupérée dans le buffer par le DMA et vérifier que le shell envoi bien la bonne valeur.
+	récupérée dans le buffer par le DMA et vérifier que le shell envoie bien la bonne valeur.
+
+4ème séance : 7.1 terminé : nous avons réussi à avoir une bonne valeur du courant en sortie du moteur (vérifiée 
+	à l'oscillo) 
