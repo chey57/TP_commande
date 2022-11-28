@@ -71,10 +71,11 @@ uint8_t started[]=
 		"\r\n";
 uint8_t newline[]="\r\n";
 uint8_t cmdNotFound[]="Command not found\r\n";
-uint8_t help[];
-uint8_t pinout[];
-uint8_t powerOn[];
-uint8_t powerOff[];
+uint8_t help[]= " set PA5\r\n get\r\n start\r\n stop\r\n pinout\r\n alpha\r\n ADC\r\n";
+uint8_t pinout[]=" PA2:UART TX\r\n PA3:UART RX\r\n PA5:LED\r\n PA8:TIM1_CH1\r\n"
+		" PA9:TIM1_CH2\r\n PA11:TIM1_CH1N\r\n PA12:TIM1_CH2N\r\n";
+uint8_t powerOn[]="Power ON\r\n";
+uint8_t powerOff[]="Power OFF\r\n";
 uint32_t uartRxReceived;
 uint8_t uartRxBuffer[UART_RX_BUFFER_SIZE];
 uint8_t uartTxBuffer[UART_TX_BUFFER_SIZE];
@@ -98,7 +99,40 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void start_PWM(){
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+}
 
+void stop_PWM(){
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+	HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+	HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
+}
+
+void changement_alpha(int alpha){
+	if (alpha > 100){
+		alpha = 100;
+	}
+	TIM1->CCR1=(5312*alpha)/100;
+	TIM1->CCR2=(5312-TIM1->CCR1);
+}
+
+float conversion_ADC(int sortie_ADC_numerique ){
+	int moyenne_sortie_ADC_numerique = sortie_ADC_numerique/20;
+	float tension_sortie_hacheur = moyenne_sortie_ADC_numerique * 3.3 / 4095;
+	float courant = (tension_sortie_hacheur -2.53)*12;
+	return (courant);
+}
+
+void GPIO_ISO_RESET(){
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET);
+}
 /* USER CODE END 0 */
 
 /**
@@ -116,8 +150,6 @@ int main(void)
 	int 		newCmdReady = 0;
 	int 		alpha = 0;
 	int 		sortie_ADC_numerique = 0;
-	int 		moyenne_sortie_ADC_numerique =0;
-	float 		tension_sortie_hacheur = 0;
 	float 		courant = 0;
 
 
@@ -163,10 +195,7 @@ int main(void)
 
  // init PWM
 
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
-	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+	start_PWM();
 
  // initialisation de l'ADC pour la mesure du courant sur la phase RED
 
@@ -236,30 +265,18 @@ int main(void)
 			{
 				HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
 			}
+
 			else if (strcmp(argv[0],"help")==0){
-				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE," set PA5\r\n get\r\n start\r\n stop\r\n pinout\r\n");
-				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
-				for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
-					uartTxBuffer[i]=0;
-				}
+				HAL_UART_Transmit(&huart2, help, sizeof(help), HAL_MAX_DELAY);
 
 			}
 			else if (strcmp(argv[0],"pinout")==0){
-				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE, " PA2:UART TX\r\n PA3:UART RX\r\n PA5:LED\r\n PA8:TIM1_CH1\r\n");
-				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
-				for (int i=0;i<UART_TX_BUFFER_SIZE;i++){
-					uartTxBuffer[i]=0;
-				}
-				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE," PA9:TIM1_CH2\r\n PA11:TIM1_CH1N\r\n PA12:TIM1_CH2N\r\n");
-				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
-
+				HAL_UART_Transmit(&huart2, pinout, sizeof(pinout), HAL_MAX_DELAY);
 			}
+
 			else if (strcmp(argv[0],"start")==0){
 
-				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-				HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-				HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
-				HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+				start_PWM();
 
 				// on met le rapport cyclique à 50 à chaque lancement (le moteur ne tourne pas)
 				TIM1->CCR1=2656;
@@ -267,41 +284,30 @@ int main(void)
 
 				// Activation du GPIO pour l'allumage du hacheur (pin 33)
 				// GPIOC Pin 0 à 1 pendant au moins 2micro s d'après la doc
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
-				HAL_Delay(1);
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET);
 
+				GPIO_ISO_RESET();
 
-				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Power ON\r\n",atoi(argv[2]));
-				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+				HAL_UART_Transmit(&huart2, powerOn, sizeof(powerOn), HAL_MAX_DELAY);
 			}
 			else if (strcmp(argv[0],"stop")==0){
 
 				// On stoppe les PWM
-				HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
-				HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
-				HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
-				HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
+				stop_PWM();
 
-				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Power OFF\r\n",atoi(argv[2]));
-				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+				HAL_UART_Transmit(&huart2, powerOff, sizeof(powerOff), HAL_MAX_DELAY);
 			}
+
 			else if(strcmp(argv[0],"alpha")==0){
 				alpha = atoi(argv[1]);
-				if (alpha > 100){
-					alpha = 100;
-				}
-				TIM1->CCR1=(5312*alpha)/100;
-				TIM1->CCR2=(5312-TIM1->CCR1);
+				changement_alpha(alpha);
 			}
 			else if(strcmp(argv[0],"ADC")==0){
 
 				for(int i=0;i<20;i++){
 					sortie_ADC_numerique = sortie_ADC_numerique + (int)(ADC_Buffer[i]);
 				}
-				moyenne_sortie_ADC_numerique = sortie_ADC_numerique/20;
-				tension_sortie_hacheur = moyenne_sortie_ADC_numerique * 3.3 / 4095;
-				courant = (tension_sortie_hacheur -2.53)*12;
+
+				courant = conversion_ADC(sortie_ADC_numerique);
 
 				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Le courant dans la phase RED vaut : %.2f A \r\n", courant);
 				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
