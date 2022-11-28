@@ -14,3 +14,8 @@
 
 4ème séance : 7.1 terminé : nous avons réussi à avoir une bonne valeur du courant en sortie du moteur (vérifiée 
 	à l'oscillo) 
+
+5ème séance : début encodeur (activation du timer4 et ecriture des fonctions pour calculer la vitesse) 
+	On a une vitesse de 0tr/min et le pb est que l'on ne rentre pas dans la fonction callback qui appelle 
+	le timer3 donc ne modifie pas la variable vitesse puisque le compteur n'est pas lancé
+
