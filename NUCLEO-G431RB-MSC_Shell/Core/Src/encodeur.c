@@ -6,14 +6,19 @@
  */
 
 #include "main.h"
+#include "encodeur.h"
+#include "math.h"
+#include "stm32g4xx_it.h"
 
 extern uint32_t counter;
-extern uint16_t vitesse;
+uint16_t vitesse = 0;
 extern TIM_HandleTypeDef htim4;
+
+
 
 void vitesse_de_rotation(){
 
-	vitesse = (1/2048)*htim4.Instance->CNT/(0,1/60);
+	vitesse = (1/2048)*htim4.Instance->CNT /(0.1/60);
 	htim4.Instance->CNT=0;
 
 }

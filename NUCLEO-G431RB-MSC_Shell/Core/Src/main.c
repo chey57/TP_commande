@@ -87,7 +87,7 @@ uint8_t stringSize;
 uint16_t ADC_Buffer[ADC_BUF_SIZE];
 
 uint32_t counter = 0;
-uint16_t vitesse = 0;
+extern uint16_t vitesse;
 
 /* USER CODE END PV */
 
@@ -107,6 +107,9 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
+
 void start_PWM(){
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -225,8 +228,9 @@ int main(void)
 	if(HAL_OK != HAL_TIM_Encoder_Start_IT(&htim4, TIM_CHANNEL_ALL))
 			printf("probleme avec l'initialisation du Timer 4 \r\n");
 
-	if(HAL_OK != HAL_TIM_Base_Start(&htim3))
+	if(HAL_OK != HAL_TIM_Base_Start_IT(&htim3))
 			printf("probleme avec l'initialisation du Timer 3 \r\n");
+
 
 
   /* USER CODE END 2 */
@@ -684,7 +688,7 @@ static void MX_TIM4_Init(void)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_ENABLE;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
   {
@@ -845,16 +849,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
-	if(htim->Instance == TIM3){
-	  		vitesse_de_rotation();
-	  	}
-  /* USER CODE END Callback 0 */
 
+  /* USER CODE END Callback 0 */
   if (htim->Instance == TIM6) {
     HAL_IncTick();
   }
-
-
   /* USER CODE BEGIN Callback 1 */
 
   /* USER CODE END Callback 1 */
