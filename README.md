@@ -19,3 +19,8 @@
 	On a une vitesse de 0tr/min et le pb est que l'on ne rentre pas dans la fonction callback qui appelle 
 	le timer3 donc ne modifie pas la variable vitesse puisque le compteur n'est pas lancé
 
+6ème séance : fin encodeur, acquisition d'une vitesse de rotation du moteur cohérente 
+	Pour la prochaine fois : finir asservissement en courant(essayer la fonction dans le main (shell : commande
+	courant) et savoir quelle valeur a notre alpha en sortie de la fonction -> gérer alpha : attention 
+	variable globale) + faire asservissement vitesse.
+

@@ -25,6 +25,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "encodeur.h"
+#include "ADC.h"
+#include "asservissement.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -133,12 +135,6 @@ void changement_alpha(int alpha){
 	TIM1->CCR2=(5312-TIM1->CCR1);
 }
 
-float conversion_ADC(int sortie_ADC_numerique ){
-	int moyenne_sortie_ADC_numerique = sortie_ADC_numerique/20;
-	float tension_sortie_hacheur = moyenne_sortie_ADC_numerique * 3.3 / 4095;
-	float courant = (tension_sortie_hacheur -2.53)*12;
-	return (courant);
-}
 
 void GPIO_ISO_RESET(){
 	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
@@ -163,8 +159,9 @@ int main(void)
 	char*		token;
 	int 		newCmdReady = 0;
 	int 		alpha = 0;
-	int 		sortie_ADC_numerique = 0;
 	float 		courant = 0;
+	float 		epsilon_courant_n_1[1]={0}; //erreur courant de l'acquisition précédente n-1
+	float 		alpha2_n_1[1]={0}; //alpha 2 de l'acquisition précédente n-1
 
 
   /* USER CODE END 1 */
@@ -325,22 +322,27 @@ int main(void)
 			}
 			else if(strcmp(argv[0],"ADC")==0){
 
-				for(int i=0;i<20;i++){
-					sortie_ADC_numerique = sortie_ADC_numerique + (int)(ADC_Buffer[i]);
-				}
-
-				courant = conversion_ADC(sortie_ADC_numerique);
+				courant = lecture_courant(ADC_Buffer);
 
 				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"Le courant dans la phase RED vaut : %.2f A \r\n", courant);
 				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
 
-				sortie_ADC_numerique =0;
+
 
 			}
 			else if(strcmp(argv[0],"vitesse")==0){
 
 				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"La vitesse vaut : %.1f tr/min \r\n", vitesse[0]);
 				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+			}
+			else if (strcmp(argv[0],"commande")==0){
+				if (strcmp(argv[1],"courant")==0){
+					int commande_courant=atoi(argv[2]);
+					stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"courant commande %d \r\n ", commande_courant);
+					HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
+
+				}
+
 			}
 			else{
 				HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
