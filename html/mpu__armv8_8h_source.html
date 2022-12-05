@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: Drivers/CMSIS/Include/mpu_armv8.h Source File</title>
+<title>My Project: NUCLEO-G431RB-MSC_Shell/Drivers/CMSIS/Include/mpu_armv8.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_60925fc218da8ca7908795bf5f624060.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_bd09ff09a9c7d83a4c030dbdaee94d76.html">CMSIS</a></li><li class="navelem"><a class="el" href="dir_5d6a8c3e4e61116f4938be35d8adfd18.html">Include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_53abe0c4bb122d45ab0623343a241ee3.html">NUCLEO-G431RB-MSC_Shell</a></li><li class="navelem"><a class="el" href="dir_37deda54c26f7c5a4df237f905a0bf28.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_fe81fc6858ca0e54209adce7f9abdd6c.html">CMSIS</a></li><li class="navelem"><a class="el" href="dir_b7f5d1b1afe180a689d0553903984e2b.html">Include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -157,7 +157,7 @@ $(function() {
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  uint32_t RBAR;                   </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="struct_a_r_m___m_p_u___region__t.html#ae9f3dcae5bc76cea6379c01975cc335b">  124</a></span>  uint32_t <a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#ae9f3dcae5bc76cea6379c01975cc335b">RLAR</a>;                   </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="struct_a_r_m___m_p_u___region__t.html#ab5d3a650dbffd0b272bf7df5b140e8a8">  124</a></span>  uint32_t <a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#ab5d3a650dbffd0b272bf7df5b140e8a8">RLAR</a>;                   </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>} <a class="code hl_struct" href="struct_a_r_m___m_p_u___region__t.html">ARM_MPU_Region_t</a>;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    </div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>__STATIC_INLINE <span class="keywordtype">void</span> ARM_MPU_Enable(uint32_t MPU_Control)</div>
@@ -276,7 +276,7 @@ $(function() {
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  <span class="keyword">const</span> uint32_t rowWordSize = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_a_r_m___m_p_u___region__t.html">ARM_MPU_Region_t</a>)/4U;</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="keywordflow">if</span> (cnt == 1U) {</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    mpu-&gt;RNR = rnr;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    ARM_MPU_OrderedMemcpy(&amp;(mpu-&gt;RBAR), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">RBAR</a>), rowWordSize);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    ARM_MPU_OrderedMemcpy(&amp;(mpu-&gt;RBAR), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">RBAR</a>), rowWordSize);</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    uint32_t rnrBase   = rnr &amp; ~(MPU_TYPE_RALIASES-1U);</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    uint32_t rnrOffset = rnr % MPU_TYPE_RALIASES;</div>
@@ -284,7 +284,7 @@ $(function() {
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    mpu-&gt;RNR = rnrBase;</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="keywordflow">while</span> ((rnrOffset + cnt) &gt; MPU_TYPE_RALIASES) {</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      uint32_t c = MPU_TYPE_RALIASES - rnrOffset;</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      ARM_MPU_OrderedMemcpy(&amp;(mpu-&gt;RBAR)+(rnrOffset*2U), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">RBAR</a>), c*rowWordSize);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      ARM_MPU_OrderedMemcpy(&amp;(mpu-&gt;RBAR)+(rnrOffset*2U), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">RBAR</a>), c*rowWordSize);</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>      table += c;</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      cnt -= c;</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      rnrOffset = 0U;</div>
@@ -292,7 +292,7 @@ $(function() {
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      mpu-&gt;RNR = rnrBase;</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    }</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    ARM_MPU_OrderedMemcpy(&amp;(mpu-&gt;RBAR)+(rnrOffset*2U), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">RBAR</a>), cnt*rowWordSize);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    ARM_MPU_OrderedMemcpy(&amp;(mpu-&gt;RBAR)+(rnrOffset*2U), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">RBAR</a>), cnt*rowWordSize);</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  }</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>}</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
@@ -316,8 +316,8 @@ $(function() {
 <div class="ttc" id="agroup___c_m_s_i_s___s_c_b_html_gaf084424fa1f69bea36a1c44899d83d17"><div class="ttname"><a href="group___c_m_s_i_s___s_c_b.html#gaf084424fa1f69bea36a1c44899d83d17">SCB_SHCSR_MEMFAULTENA_Msk</a></div><div class="ttdeci">#define SCB_SHCSR_MEMFAULTENA_Msk</div><div class="ttdef"><b>Definition:</b> core_armv81mml.h:695</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s__core__base_html_gaaaf6477c2bde2f00f99e3c2fd1060b01"><div class="ttname"><a href="group___c_m_s_i_s__core__base.html#gaaaf6477c2bde2f00f99e3c2fd1060b01">SCB</a></div><div class="ttdeci">#define SCB</div><div class="ttdef"><b>Definition:</b> core_armv81mml.h:2044</div></div>
 <div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html">ARM_MPU_Region_t</a></div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:183</div></div>
-<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_a0b30f076910cb037e031563046dd5e10"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">ARM_MPU_Region_t::RBAR</a></div><div class="ttdeci">uint32_t RBAR</div><div class="ttdoc">The region base address register value (RBAR)</div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:184</div></div>
-<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_ae9f3dcae5bc76cea6379c01975cc335b"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#ae9f3dcae5bc76cea6379c01975cc335b">ARM_MPU_Region_t::RLAR</a></div><div class="ttdeci">uint32_t RLAR</div><div class="ttdef"><b>Definition:</b> mpu_armv8.h:124</div></div>
+<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_ab5d3a650dbffd0b272bf7df5b140e8a8"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#ab5d3a650dbffd0b272bf7df5b140e8a8">ARM_MPU_Region_t::RLAR</a></div><div class="ttdeci">uint32_t RLAR</div><div class="ttdef"><b>Definition:</b> mpu_armv8.h:124</div></div>
+<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_afe7a7721aa08988d915670efa432cdd2"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">ARM_MPU_Region_t::RBAR</a></div><div class="ttdeci">uint32_t RBAR</div><div class="ttdoc">The region base address register value (RBAR)</div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:184</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

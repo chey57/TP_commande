@@ -246,7 +246,6 @@ void TIM3_IRQHandler(void)
   HAL_TIM_IRQHandler(&htim3);
   /* USER CODE BEGIN TIM3_IRQn 1 */
 
-  counter = __HAL_TIM_GET_COUNTER(htim4);
   	 vitesse_de_rotation();
 
   /* USER CODE END TIM3_IRQn 1 */

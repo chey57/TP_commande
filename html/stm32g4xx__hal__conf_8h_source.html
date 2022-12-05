@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: Core/Inc/stm32g4xx_hal_conf.h Source File</title>
+<title>My Project: NUCLEO-G431RB-MSC_Shell/Core/Inc/stm32g4xx_hal_conf.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_53abe0c4bb122d45ab0623343a241ee3.html">NUCLEO-G431RB-MSC_Shell</a></li><li class="navelem"><a class="el" href="dir_6346ef0ffbde58298e5fa93243e878f6.html">Core</a></li><li class="navelem"><a class="el" href="dir_2b2b63c8cce916987485700fff7c8053.html">Inc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,7 +93,7 @@ $(function() {
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/* ########################## Module Selection ############################## */</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="stm32g4xx__hal__conf_8h.html#a877ae99e8c47a609ea97c888912bf75f">   37</a></span><span class="preprocessor">#define HAL_MODULE_ENABLED</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="comment">/*#define HAL_ADC_MODULE_ENABLED   */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">  #define HAL_ADC_MODULE_ENABLED</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/*#define HAL_COMP_MODULE_ENABLED   */</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/*#define HAL_CORDIC_MODULE_ENABLED   */</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/*#define HAL_CRC_MODULE_ENABLED   */</span></div>
@@ -219,19 +219,19 @@ $(function() {
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#ifdef HAL_RCC_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__rcc_8h.html">stm32g4xx_hal_rcc.h</a>&quot;</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#include &quot;stm32g4xx_hal_rcc.h&quot;</span></div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_RCC_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="preprocessor">#ifdef HAL_GPIO_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__gpio_8h.html">stm32g4xx_hal_gpio.h</a>&quot;</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">#include &quot;stm32g4xx_hal_gpio.h&quot;</span></div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_GPIO_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#ifdef HAL_DMA_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__dma_8h.html">stm32g4xx_hal_dma.h</a>&quot;</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="preprocessor">#include &quot;stm32g4xx_hal_dma.h&quot;</span></div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_DMA_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="preprocessor">#ifdef HAL_CORTEX_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__cortex_8h.html">stm32g4xx_hal_cortex.h</a>&quot;</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="preprocessor">#include &quot;stm32g4xx_hal_cortex.h&quot;</span></div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_CORTEX_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#ifdef HAL_ADC_MODULE_ENABLED</span></div>
@@ -259,7 +259,7 @@ $(function() {
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_DAC_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="preprocessor">#ifdef HAL_EXTI_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__exti_8h.html">stm32g4xx_hal_exti.h</a>&quot;</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">#include &quot;stm32g4xx_hal_exti.h&quot;</span></div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_EXTI_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="preprocessor">#ifdef HAL_FDCAN_MODULE_ENABLED</span></div>
@@ -267,7 +267,7 @@ $(function() {
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_FDCAN_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#ifdef HAL_FLASH_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__flash_8h.html">stm32g4xx_hal_flash.h</a>&quot;</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">#include &quot;stm32g4xx_hal_flash.h&quot;</span></div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_FLASH_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="preprocessor">#ifdef HAL_FMAC_MODULE_ENABLED</span></div>
@@ -315,7 +315,7 @@ $(function() {
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_PCD_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="preprocessor">#ifdef HAL_PWR_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__pwr_8h.html">stm32g4xx_hal_pwr.h</a>&quot;</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#include &quot;stm32g4xx_hal_pwr.h&quot;</span></div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_PWR_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">#ifdef HAL_QSPI_MODULE_ENABLED</span></div>
@@ -351,11 +351,11 @@ $(function() {
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_SRAM_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="preprocessor">#ifdef HAL_TIM_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__tim_8h.html">stm32g4xx_hal_tim.h</a>&quot;</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="preprocessor">#include &quot;stm32g4xx_hal_tim.h&quot;</span></div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_TIM_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">#ifdef HAL_UART_MODULE_ENABLED</span></div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="preprocessor">#include &quot;<a class="code" href="stm32g4xx__hal__uart_8h.html">stm32g4xx_hal_uart.h</a>&quot;</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="preprocessor">#include &quot;stm32g4xx_hal_uart.h&quot;</span></div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_UART_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">#ifdef HAL_USART_MODULE_ENABLED</span></div>
@@ -380,15 +380,6 @@ $(function() {
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="preprocessor">#endif </span><span class="comment">/* STM32G4xx_HAL_CONF_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="astm32g4xx__hal__cortex_8h_html"><div class="ttname"><a href="stm32g4xx__hal__cortex_8h.html">stm32g4xx_hal_cortex.h</a></div><div class="ttdoc">Header file of CORTEX HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__dma_8h_html"><div class="ttname"><a href="stm32g4xx__hal__dma_8h.html">stm32g4xx_hal_dma.h</a></div><div class="ttdoc">Header file of DMA HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__exti_8h_html"><div class="ttname"><a href="stm32g4xx__hal__exti_8h.html">stm32g4xx_hal_exti.h</a></div><div class="ttdoc">Header file of EXTI HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__flash_8h_html"><div class="ttname"><a href="stm32g4xx__hal__flash_8h.html">stm32g4xx_hal_flash.h</a></div><div class="ttdoc">Header file of FLASH HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__gpio_8h_html"><div class="ttname"><a href="stm32g4xx__hal__gpio_8h.html">stm32g4xx_hal_gpio.h</a></div><div class="ttdoc">Header file of GPIO HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__pwr_8h_html"><div class="ttname"><a href="stm32g4xx__hal__pwr_8h.html">stm32g4xx_hal_pwr.h</a></div><div class="ttdoc">Header file of PWR HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__rcc_8h_html"><div class="ttname"><a href="stm32g4xx__hal__rcc_8h.html">stm32g4xx_hal_rcc.h</a></div><div class="ttdoc">Header file of RCC HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__tim_8h_html"><div class="ttname"><a href="stm32g4xx__hal__tim_8h.html">stm32g4xx_hal_tim.h</a></div><div class="ttdoc">Header file of TIM HAL module.</div></div>
-<div class="ttc" id="astm32g4xx__hal__uart_8h_html"><div class="ttname"><a href="stm32g4xx__hal__uart_8h.html">stm32g4xx_hal_uart.h</a></div><div class="ttdoc">Header file of UART HAL module.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

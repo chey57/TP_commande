@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: IO operation functions</title>
+<title>My Project: IO operation functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -134,8 +134,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_UART_TxCpltCallba
 <tr class="memitem:ga1884970cc493d8efba5aec28c0d526e7"><td class="memItemLeft" align="right" valign="top"><a id="ga1884970cc493d8efba5aec28c0d526e7" name="ga1884970cc493d8efba5aec28c0d526e7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_UART_RxHalfCpltCallback</b> (<a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a> *huart)</td></tr>
 <tr class="separator:ga1884970cc493d8efba5aec28c0d526e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae494a9643f29b87d6d81e5264e60e57b"><td class="memItemLeft" align="right" valign="top"><a id="gae494a9643f29b87d6d81e5264e60e57b" name="gae494a9643f29b87d6d81e5264e60e57b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_UART_RxCpltCallback</b> (<a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a> *huart)</td></tr>
+<tr class="memitem:gae494a9643f29b87d6d81e5264e60e57b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___exported___functions___group2.html#gae494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a> (<a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a> *huart)</td></tr>
+<tr class="memdesc:gae494a9643f29b87d6d81e5264e60e57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction de gestion de la communication (uart) entre le programme et l'utilisateur.  <a href="group___u_a_r_t___exported___functions___group2.html#gae494a9643f29b87d6d81e5264e60e57b">More...</a><br /></td></tr>
 <tr class="separator:gae494a9643f29b87d6d81e5264e60e57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0e0456ea96d55db31de947fb3e954f18"><td class="memItemLeft" align="right" valign="top"><a id="ga0e0456ea96d55db31de947fb3e954f18" name="ga0e0456ea96d55db31de947fb3e954f18"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_UART_ErrorCallback</b> (<a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a> *huart)</td></tr>
@@ -154,6 +154,40 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_UARTEx_RxEventCal
 <tr class="separator:ga925534fb8bf7ca464fd05c982fe4bfa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gae494a9643f29b87d6d81e5264e60e57b" name="gae494a9643f29b87d6d81e5264e60e57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae494a9643f29b87d6d81e5264e60e57b">&#9670;&#160;</a></span>HAL_UART_RxCpltCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_UART_RxCpltCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a> *&#160;</td>
+          <td class="paramname"><em>huart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>fonction de gestion de la communication (uart) entre le programme et l'utilisateur. </p>
+<dl class="section note"><dt>Note</dt><dd>La fonction est appelee lorsque le programme detecte une entree de l'utilisateur sur le shell </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">huart</td><td>: UART handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

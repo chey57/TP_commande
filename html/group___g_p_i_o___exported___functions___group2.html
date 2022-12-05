@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: IO operation functions</title>
+<title>My Project: IO operation functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -95,12 +95,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_GPIO_TogglePin</b
 <tr class="memitem:gaa5de1ec4ebdd47e3e2b786224adaa9d0"><td class="memItemLeft" align="right" valign="top"><a id="gaa5de1ec4ebdd47e3e2b786224adaa9d0" name="gaa5de1ec4ebdd47e3e2b786224adaa9d0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_GPIO_EXTI_IRQHandler</b> (uint16_t GPIO_Pin)</td></tr>
 <tr class="separator:gaa5de1ec4ebdd47e3e2b786224adaa9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memItemLeft" align="right" valign="top"><a id="ga0cd91fd3a9608559c2a87a8ba6cba55f" name="ga0cd91fd3a9608559c2a87a8ba6cba55f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_GPIO_EXTI_Callback</b> (uint16_t GPIO_Pin)</td></tr>
+<tr class="memitem:ga0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o___exported___functions___group2.html#ga0cd91fd3a9608559c2a87a8ba6cba55f">HAL_GPIO_EXTI_Callback</a> (uint16_t GPIO_Pin)</td></tr>
+<tr class="memdesc:ga0cd91fd3a9608559c2a87a8ba6cba55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction callback du bouton bleu  <a href="group___g_p_i_o___exported___functions___group2.html#ga0cd91fd3a9608559c2a87a8ba6cba55f">More...</a><br /></td></tr>
 <tr class="separator:ga0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >IO operation functions. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga0cd91fd3a9608559c2a87a8ba6cba55f" name="ga0cd91fd3a9608559c2a87a8ba6cba55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0cd91fd3a9608559c2a87a8ba6cba55f">&#9670;&#160;</a></span>HAL_GPIO_EXTI_Callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_GPIO_EXTI_Callback </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>fonction callback du bouton bleu </p>
+<dl class="section note"><dt>Note</dt><dd>La fonction est appelee lorsque l'utilisateur appui sur le bouton bleu et provoque l'activation du GPIO pour l'allumage du hacheur (pin 33) GPIOC Pin 0 à 1 pendant au moins 2micro s d'après la doc </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GPIO_Pin</td><td>: Pin handler </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

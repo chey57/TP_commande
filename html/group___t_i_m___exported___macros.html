@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: TIM Exported Macros</title>
+<title>My Project: TIM Exported Macros</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -134,7 +134,7 @@ Macros</h2></td></tr>
 <tr class="memitem:ga9746ac75e4cd25cec1a9ebac8cb82b97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___t_i_m___exported___macros.html#ga9746ac75e4cd25cec1a9ebac8cb82b97">__HAL_TIM_SET_COUNTER</a>(__HANDLE__,  __COUNTER__)&#160;&#160;&#160;((__HANDLE__)-&gt;Instance-&gt;CNT = (__COUNTER__))</td></tr>
 <tr class="memdesc:ga9746ac75e4cd25cec1a9ebac8cb82b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the TIM Counter Register value on runtime. Note Please check if the bit 31 of CNT register is used as UIF copy or not, this may affect the counter range in case of 32 bits counter TIM instance. Bit 31 of CNT can be enabled/disabled using <a class="el" href="group___t_i_m___exported___macros.html#ga70b3690dfed282ade70d503801b8bfd0">__HAL_TIM_UIFREMAP_ENABLE()</a>/__HAL_TIM_UIFREMAP_DISABLE() macros.  <a href="group___t_i_m___exported___macros.html#ga9746ac75e4cd25cec1a9ebac8cb82b97">More...</a><br /></td></tr>
 <tr class="separator:ga9746ac75e4cd25cec1a9ebac8cb82b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1af08014b9d06efbbb091d58d47c8ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___t_i_m___exported___macros.html#gaf1af08014b9d06efbbb091d58d47c8ba">__HAL_TIM_GET_COUNTER</a>(__HANDLE__)&#160;&#160;&#160;((__HANDLE__)-&gt;Instance-&gt;CNT)</td></tr>
+<tr class="memitem:gaf1af08014b9d06efbbb091d58d47c8ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___t_i_m___exported___macros.html#gaf1af08014b9d06efbbb091d58d47c8ba">__HAL_TIM_GET_COUNTER</a>(__HANDLE__)&#160;&#160;&#160;((__HANDLE__).Instance-&gt;CNT)</td></tr>
 <tr class="memdesc:gaf1af08014b9d06efbbb091d58d47c8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the TIM Counter Register value on runtime.  <a href="group___t_i_m___exported___macros.html#gaf1af08014b9d06efbbb091d58d47c8ba">More...</a><br /></td></tr>
 <tr class="separator:gaf1af08014b9d06efbbb091d58d47c8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1e6300cab1e34ecaaf490dc7d4812d69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___t_i_m___exported___macros.html#ga1e6300cab1e34ecaaf490dc7d4812d69">__HAL_TIM_SET_AUTORELOAD</a>(__HANDLE__,  __AUTORELOAD__)</td></tr>
@@ -985,7 +985,7 @@ Fast mode acts only if the channel is configured in PWM1 or PWM2 mode. </dd></dl
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">__HANDLE__</td><td>)</td>
-          <td>&#160;&#160;&#160;((__HANDLE__)-&gt;Instance-&gt;CNT)</td>
+          <td>&#160;&#160;&#160;((__HANDLE__).Instance-&gt;CNT)</td>
         </tr>
       </table>
 </div><div class="memdoc">

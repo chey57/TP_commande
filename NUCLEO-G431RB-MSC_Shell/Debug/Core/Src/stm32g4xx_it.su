@@ -10,6 +10,6 @@
 ../Core/Src/stm32g4xx_it.c:213:6:DMA1_Channel1_IRQHandler	8	static
 ../Core/Src/stm32g4xx_it.c:227:6:ADC1_2_IRQHandler	8	static
 ../Core/Src/stm32g4xx_it.c:241:6:TIM3_IRQHandler	8	static
-../Core/Src/stm32g4xx_it.c:258:6:TIM4_IRQHandler	8	static
-../Core/Src/stm32g4xx_it.c:272:6:USART2_IRQHandler	8	static
-../Core/Src/stm32g4xx_it.c:286:6:TIM6_DAC_IRQHandler	8	static
+../Core/Src/stm32g4xx_it.c:257:6:TIM4_IRQHandler	8	static
+../Core/Src/stm32g4xx_it.c:271:6:USART2_IRQHandler	8	static
+../Core/Src/stm32g4xx_it.c:285:6:TIM6_DAC_IRQHandler	8	static

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: Drivers/CMSIS/Include/mpu_armv7.h Source File</title>
+<title>My Project: NUCLEO-G431RB-MSC_Shell/Drivers/CMSIS/Include/mpu_armv7.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_60925fc218da8ca7908795bf5f624060.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_bd09ff09a9c7d83a4c030dbdaee94d76.html">CMSIS</a></li><li class="navelem"><a class="el" href="dir_5d6a8c3e4e61116f4938be35d8adfd18.html">Include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_53abe0c4bb122d45ab0623343a241ee3.html">NUCLEO-G431RB-MSC_Shell</a></li><li class="navelem"><a class="el" href="dir_37deda54c26f7c5a4df237f905a0bf28.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_fe81fc6858ca0e54209adce7f9abdd6c.html">CMSIS</a></li><li class="navelem"><a class="el" href="dir_b7f5d1b1afe180a689d0553903984e2b.html">Include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -183,8 +183,8 @@ $(function() {
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="struct_a_r_m___m_p_u___region__t.html">  183</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">  184</a></span>  uint32_t <a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">RBAR</a>; </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="struct_a_r_m___m_p_u___region__t.html#a868291e1acbf1ce869f6e98a7c68718a">  185</a></span>  uint32_t <a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a868291e1acbf1ce869f6e98a7c68718a">RASR</a>; </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">  184</a></span>  uint32_t <a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">RBAR</a>; </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="struct_a_r_m___m_p_u___region__t.html#a38c1d3bc6a9ffc9423d633add01928f1">  185</a></span>  uint32_t <a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a38c1d3bc6a9ffc9423d633add01928f1">RASR</a>; </div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>} <a class="code hl_struct" href="struct_a_r_m___m_p_u___region__t.html">ARM_MPU_Region_t</a>;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    </div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>__STATIC_INLINE <span class="keywordtype">void</span> ARM_MPU_Enable(uint32_t MPU_Control)</div>
@@ -238,11 +238,11 @@ $(function() {
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>{</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  <span class="keyword">const</span> uint32_t rowWordSize = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_a_r_m___m_p_u___region__t.html">ARM_MPU_Region_t</a>)/4U;</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  <span class="keywordflow">while</span> (cnt &gt; MPU_TYPE_RALIASES) {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    ARM_MPU_OrderedMemcpy(&amp;(MPU-&gt;RBAR), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">RBAR</a>), MPU_TYPE_RALIASES*rowWordSize);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    ARM_MPU_OrderedMemcpy(&amp;(MPU-&gt;RBAR), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">RBAR</a>), MPU_TYPE_RALIASES*rowWordSize);</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    table += MPU_TYPE_RALIASES;</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    cnt -= MPU_TYPE_RALIASES;</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  }</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  ARM_MPU_OrderedMemcpy(&amp;(MPU-&gt;RBAR), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">RBAR</a>), cnt*rowWordSize);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  ARM_MPU_OrderedMemcpy(&amp;(MPU-&gt;RBAR), &amp;(table-&gt;<a class="code hl_variable" href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">RBAR</a>), cnt*rowWordSize);</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#endif</span></div>
@@ -252,8 +252,8 @@ $(function() {
 <div class="ttc" id="agroup___c_m_s_i_s___s_c_b_html_gaf084424fa1f69bea36a1c44899d83d17"><div class="ttname"><a href="group___c_m_s_i_s___s_c_b.html#gaf084424fa1f69bea36a1c44899d83d17">SCB_SHCSR_MEMFAULTENA_Msk</a></div><div class="ttdeci">#define SCB_SHCSR_MEMFAULTENA_Msk</div><div class="ttdef"><b>Definition:</b> core_armv81mml.h:695</div></div>
 <div class="ttc" id="agroup___c_m_s_i_s__core__base_html_gaaaf6477c2bde2f00f99e3c2fd1060b01"><div class="ttname"><a href="group___c_m_s_i_s__core__base.html#gaaaf6477c2bde2f00f99e3c2fd1060b01">SCB</a></div><div class="ttdeci">#define SCB</div><div class="ttdef"><b>Definition:</b> core_armv81mml.h:2044</div></div>
 <div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html">ARM_MPU_Region_t</a></div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:183</div></div>
-<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_a0b30f076910cb037e031563046dd5e10"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#a0b30f076910cb037e031563046dd5e10">ARM_MPU_Region_t::RBAR</a></div><div class="ttdeci">uint32_t RBAR</div><div class="ttdoc">The region base address register value (RBAR)</div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:184</div></div>
-<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_a868291e1acbf1ce869f6e98a7c68718a"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#a868291e1acbf1ce869f6e98a7c68718a">ARM_MPU_Region_t::RASR</a></div><div class="ttdeci">uint32_t RASR</div><div class="ttdoc">The region attribute and size register value (RASR) MPU_RASR.</div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:185</div></div>
+<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_a38c1d3bc6a9ffc9423d633add01928f1"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#a38c1d3bc6a9ffc9423d633add01928f1">ARM_MPU_Region_t::RASR</a></div><div class="ttdeci">uint32_t RASR</div><div class="ttdoc">The region attribute and size register value (RASR) MPU_RASR.</div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:185</div></div>
+<div class="ttc" id="astruct_a_r_m___m_p_u___region__t_html_afe7a7721aa08988d915670efa432cdd2"><div class="ttname"><a href="struct_a_r_m___m_p_u___region__t.html#afe7a7721aa08988d915670efa432cdd2">ARM_MPU_Region_t::RBAR</a></div><div class="ttdeci">uint32_t RBAR</div><div class="ttdoc">The region base address register value (RBAR)</div><div class="ttdef"><b>Definition:</b> mpu_armv7.h:184</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

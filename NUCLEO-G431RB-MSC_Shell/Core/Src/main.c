@@ -87,7 +87,8 @@ uint8_t stringSize;
 uint16_t ADC_Buffer[ADC_BUF_SIZE];
 
 uint32_t counter = 0;
-extern uint16_t vitesse;
+
+extern float vitesse[1];
 
 /* USER CODE END PV */
 
@@ -225,7 +226,7 @@ int main(void)
 
  // initialisation du Timer 4 pour la mesure de vitesse avec le codeur incremental
 
-	if(HAL_OK != HAL_TIM_Encoder_Start_IT(&htim4, TIM_CHANNEL_ALL))
+	if(HAL_OK != HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL))
 			printf("probleme avec l'initialisation du Timer 4 \r\n");
 
 	if(HAL_OK != HAL_TIM_Base_Start_IT(&htim3))
@@ -338,7 +339,7 @@ int main(void)
 			}
 			else if(strcmp(argv[0],"vitesse")==0){
 
-				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"La vitesse vaut : %d tr/min \r\n", vitesse);
+				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"La vitesse vaut : %.1f tr/min \r\n", vitesse[0]);
 				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
 			}
 			else{

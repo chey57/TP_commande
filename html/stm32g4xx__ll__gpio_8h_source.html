@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_gpio.h Source File</title>
+<title>My Project: NUCLEO-G431RB-MSC_Shell/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_gpio.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_60925fc218da8ca7908795bf5f624060.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_a86d4ce481749dafe8c531dc11abd870.html">STM32G4xx_HAL_Driver</a></li><li class="navelem"><a class="el" href="dir_565696936a2f7994e047f8d0ce5b8d3d.html">Inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_53abe0c4bb122d45ab0623343a241ee3.html">NUCLEO-G431RB-MSC_Shell</a></li><li class="navelem"><a class="el" href="dir_37deda54c26f7c5a4df237f905a0bf28.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_14d5b9f8ade9b54e3fa6fbb5e52b352b.html">STM32G4xx_HAL_Driver</a></li><li class="navelem"><a class="el" href="dir_3132770379d36083ebdcf8da084f7fd6.html">Inc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -175,69 +175,69 @@ $(function() {
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment">/* Exported functions --------------------------------------------------------*/</span></div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_SetPinMode(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin, uint32_t Mode)</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>{</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2b671a94c63a612f81e0e9de8152d01c">MODER</a>, (GPIO_MODER_MODE0 &lt;&lt; (POSITION_VAL(Pin) * 2U)), (Mode &lt;&lt; (POSITION_VAL(Pin) * 2U)));</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ac2505d096b6b650f1647b8e0ff8b196b">MODER</a>, (GPIO_MODER_MODE0 &lt;&lt; (POSITION_VAL(Pin) * 2U)), (Mode &lt;&lt; (POSITION_VAL(Pin) * 2U)));</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>}</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>__STATIC_INLINE uint32_t LL_GPIO_GetPinMode(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin)</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>{</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2b671a94c63a612f81e0e9de8152d01c">MODER</a>,</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ac2505d096b6b650f1647b8e0ff8b196b">MODER</a>,</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                             (GPIO_MODER_MODE0 &lt;&lt; (POSITION_VAL(Pin) * 2U))) &gt;&gt; (POSITION_VAL(Pin) * 2U));</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>}</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_SetPinOutputType(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask, uint32_t OutputType)</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>{</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a9543592bda60cb5261075594bdeedac9">OTYPER</a>, PinMask, (PinMask * OutputType));</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a910885e4d881c3a459dd11640237107f">OTYPER</a>, PinMask, (PinMask * OutputType));</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>}</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>__STATIC_INLINE uint32_t LL_GPIO_GetPinOutputType(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin)</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>{</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a9543592bda60cb5261075594bdeedac9">OTYPER</a>, Pin) &gt;&gt; POSITION_VAL(Pin));</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a910885e4d881c3a459dd11640237107f">OTYPER</a>, Pin) &gt;&gt; POSITION_VAL(Pin));</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>}</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_SetPinSpeed(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin, uint32_t  Speed)</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>{</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a328d16cc6213783ede54e4059ffd50a3">OSPEEDR</a>, (GPIO_OSPEEDR_OSPEED0 &lt;&lt; (POSITION_VAL(Pin) * 2U)),</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a0d233d720f18ae2050f9131fa6faf7c6">OSPEEDR</a>, (GPIO_OSPEEDR_OSPEED0 &lt;&lt; (POSITION_VAL(Pin) * 2U)),</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>             (Speed &lt;&lt; (POSITION_VAL(Pin) * 2U)));</div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>}</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>__STATIC_INLINE uint32_t LL_GPIO_GetPinSpeed(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin)</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>{</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a328d16cc6213783ede54e4059ffd50a3">OSPEEDR</a>,</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a0d233d720f18ae2050f9131fa6faf7c6">OSPEEDR</a>,</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>                             (GPIO_OSPEEDR_OSPEED0 &lt;&lt; (POSITION_VAL(Pin) * 2U))) &gt;&gt; (POSITION_VAL(Pin) * 2U));</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>}</div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span> </div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_SetPinPull(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin, uint32_t Pull)</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>{</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#abeed38529bd7b8de082e490e5d4f1727">PUPDR</a>, (GPIO_PUPDR_PUPD0 &lt;&lt; (POSITION_VAL(Pin) * 2U)), (Pull &lt;&lt; (POSITION_VAL(Pin) * 2U)));</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a44ada3bfbe891e2efc1e06bda4c8014e">PUPDR</a>, (GPIO_PUPDR_PUPD0 &lt;&lt; (POSITION_VAL(Pin) * 2U)), (Pull &lt;&lt; (POSITION_VAL(Pin) * 2U)));</div>
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>}</div>
 <div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span> </div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>__STATIC_INLINE uint32_t LL_GPIO_GetPinPull(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin)</div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>{</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#abeed38529bd7b8de082e490e5d4f1727">PUPDR</a>,</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a44ada3bfbe891e2efc1e06bda4c8014e">PUPDR</a>,</div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                             (GPIO_PUPDR_PUPD0 &lt;&lt; (POSITION_VAL(Pin) * 2U))) &gt;&gt; (POSITION_VAL(Pin) * 2U));</div>
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>}</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span> </div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_SetAFPin_0_7(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin, uint32_t Alternate)</div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>{</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ab67c1158c04450d19ad483dcd2192e43">AFR</a>[0], (GPIO_AFRL_AFSEL0 &lt;&lt; (POSITION_VAL(Pin) * 4U)),</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2245603433e102f0fd8a85f7de020755">AFR</a>[0], (GPIO_AFRL_AFSEL0 &lt;&lt; (POSITION_VAL(Pin) * 4U)),</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>             (Alternate &lt;&lt; (POSITION_VAL(Pin) * 4U)));</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>}</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>__STATIC_INLINE uint32_t LL_GPIO_GetAFPin_0_7(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin)</div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>{</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ab67c1158c04450d19ad483dcd2192e43">AFR</a>[0],</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2245603433e102f0fd8a85f7de020755">AFR</a>[0],</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>                             (GPIO_AFRL_AFSEL0 &lt;&lt; (POSITION_VAL(Pin) * 4U))) &gt;&gt; (POSITION_VAL(Pin) * 4U));</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>}</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span> </div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_SetAFPin_8_15(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin, uint32_t Alternate)</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>{</div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ab67c1158c04450d19ad483dcd2192e43">AFR</a>[1], (GPIO_AFRH_AFSEL8 &lt;&lt; (POSITION_VAL(Pin &gt;&gt; 8U) * 4U)),</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>  MODIFY_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2245603433e102f0fd8a85f7de020755">AFR</a>[1], (GPIO_AFRH_AFSEL8 &lt;&lt; (POSITION_VAL(Pin &gt;&gt; 8U) * 4U)),</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>             (Alternate &lt;&lt; (POSITION_VAL(Pin &gt;&gt; 8U) * 4U)));</div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>}</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span> </div>
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>__STATIC_INLINE uint32_t LL_GPIO_GetAFPin_8_15(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t Pin)</div>
 <div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>{</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ab67c1158c04450d19ad483dcd2192e43">AFR</a>[1],</div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>  <span class="keywordflow">return</span> (uint32_t)(READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2245603433e102f0fd8a85f7de020755">AFR</a>[1],</div>
 <div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>                             (GPIO_AFRH_AFSEL8 &lt;&lt; (POSITION_VAL(Pin &gt;&gt; 8U) * 4U))) &gt;&gt; (POSITION_VAL(Pin &gt;&gt; 8U) * 4U));</div>
 <div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>}</div>
 <div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span> </div>
@@ -245,63 +245,63 @@ $(function() {
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_LockPin(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask)</div>
 <div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>{</div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>  <a class="code hl_define" href="core__armv81mml_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t temp;</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">LCKR</a>, GPIO_LCKR_LCKK | PinMask);</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">LCKR</a>, PinMask);</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">LCKR</a>, GPIO_LCKR_LCKK | PinMask);</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">LCKR</a>, GPIO_LCKR_LCKK | PinMask);</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">LCKR</a>, PinMask);</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">LCKR</a>, GPIO_LCKR_LCKK | PinMask);</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>  <span class="comment">/* Read LCKR register. This read is mandatory to complete key lock sequence */</span></div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>  temp = READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">LCKR</a>);</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>  temp = READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">LCKR</a>);</div>
 <div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>  (void) temp;</div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>}</div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span> </div>
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>__STATIC_INLINE uint32_t LL_GPIO_IsPinLocked(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask)</div>
 <div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>{</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">LCKR</a>, PinMask) == (PinMask)) ? 1UL : 0UL);</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">LCKR</a>, PinMask) == (PinMask)) ? 1UL : 0UL);</div>
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>}</div>
 <div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span> </div>
 <div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>__STATIC_INLINE uint32_t LL_GPIO_IsAnyPinLocked(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx)</div>
 <div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>{</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">LCKR</a>, GPIO_LCKR_LCKK) == (GPIO_LCKR_LCKK)) ? 1UL : 0UL);</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">LCKR</a>, GPIO_LCKR_LCKK) == (GPIO_LCKR_LCKK)) ? 1UL : 0UL);</div>
 <div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>}</div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span> </div>
 <div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>__STATIC_INLINE uint32_t LL_GPIO_ReadInputPort(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx)</div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>{</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>  <span class="keywordflow">return</span> (uint32_t)(READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a328d2fe9ef1d513c3a97d30f98f0047c">IDR</a>));</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>  <span class="keywordflow">return</span> (uint32_t)(READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#acf11156409414ad8841bb0b62959ee96">IDR</a>));</div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>}</div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span> </div>
 <div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>__STATIC_INLINE uint32_t LL_GPIO_IsInputPinSet(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask)</div>
 <div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>{</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a328d2fe9ef1d513c3a97d30f98f0047c">IDR</a>, PinMask) == (PinMask)) ? 1UL : 0UL);</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#acf11156409414ad8841bb0b62959ee96">IDR</a>, PinMask) == (PinMask)) ? 1UL : 0UL);</div>
 <div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>}</div>
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span> </div>
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_WriteOutputPort(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PortValue)</div>
 <div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>{</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#abff7fffd2b5a718715a130006590c75c">ODR</a>, PortValue);</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a6fb78f4a978a36032cdeac93ac3c9c8b">ODR</a>, PortValue);</div>
 <div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>}</div>
 <div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span> </div>
 <div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>__STATIC_INLINE uint32_t LL_GPIO_ReadOutputPort(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx)</div>
 <div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>{</div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>  <span class="keywordflow">return</span> (uint32_t)(READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#abff7fffd2b5a718715a130006590c75c">ODR</a>));</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>  <span class="keywordflow">return</span> (uint32_t)(READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a6fb78f4a978a36032cdeac93ac3c9c8b">ODR</a>));</div>
 <div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>}</div>
 <div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span> </div>
 <div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>__STATIC_INLINE uint32_t LL_GPIO_IsOutputPinSet(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask)</div>
 <div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>{</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#abff7fffd2b5a718715a130006590c75c">ODR</a>, PinMask) == (PinMask)) ? 1UL : 0UL);</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>  <span class="keywordflow">return</span> ((READ_BIT(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a6fb78f4a978a36032cdeac93ac3c9c8b">ODR</a>, PinMask) == (PinMask)) ? 1UL : 0UL);</div>
 <div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>}</div>
 <div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span> </div>
 <div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_SetOutputPin(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask)</div>
 <div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>{</div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ac25dd6b9e3d55e17589195b461c5ec80">BSRR</a>, PinMask);</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#acd6f21e08912b484c030ca8b18e11cd6">BSRR</a>, PinMask);</div>
 <div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>}</div>
 <div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span> </div>
 <div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_ResetOutputPin(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask)</div>
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>{</div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a092e59d908b2ca112e31047e942340cb">BRR</a>, PinMask);</div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#aab918bfbfae459789db1fd0b220c7f21">BRR</a>, PinMask);</div>
 <div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>}</div>
 <div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span> </div>
 <div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>__STATIC_INLINE <span class="keywordtype">void</span> LL_GPIO_TogglePin(<a class="code hl_struct" href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a> *GPIOx, uint32_t PinMask)</div>
 <div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>{</div>
-<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>  uint32_t odr = READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#abff7fffd2b5a718715a130006590c75c">ODR</a>);</div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#ac25dd6b9e3d55e17589195b461c5ec80">BSRR</a>, ((odr &amp; PinMask) &lt;&lt; 16u) | (~odr &amp; PinMask));</div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>  uint32_t odr = READ_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#a6fb78f4a978a36032cdeac93ac3c9c8b">ODR</a>);</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>  WRITE_REG(GPIOx-&gt;<a class="code hl_variable" href="struct_g_p_i_o___type_def.html#acd6f21e08912b484c030ca8b18e11cd6">BSRR</a>, ((odr &amp; PinMask) &lt;&lt; 16u) | (~odr &amp; PinMask));</div>
 <div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>}</div>
 <div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span> </div>
 <div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span><span class="preprocessor">#if defined(USE_FULL_LL_DRIVER)</span></div>
@@ -321,16 +321,16 @@ $(function() {
 <div class="ttc" id="acore__armv81mml_8h_html_aec43007d9998a0a0e01faede4133d6be"><div class="ttname"><a href="core__armv81mml_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a></div><div class="ttdeci">#define __IO</div><div class="ttdef"><b>Definition:</b> core_armv81mml.h:277</div></div>
 <div class="ttc" id="astm32g4xx_8h_html"><div class="ttname"><a href="stm32g4xx_8h.html">stm32g4xx.h</a></div><div class="ttdoc">CMSIS STM32G4xx Device Peripheral Access Layer Header File.</div></div>
 <div class="ttc" id="astruct_g_p_i_o___type_def_html"><div class="ttname"><a href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a></div><div class="ttdoc">General Purpose I/O.</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:465</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_a092e59d908b2ca112e31047e942340cb"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a092e59d908b2ca112e31047e942340cb">GPIO_TypeDef::BRR</a></div><div class="ttdeci">__IO uint32_t BRR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:475</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_a2612a0f4b3fbdbb6293f6dc70105e190"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">GPIO_TypeDef::LCKR</a></div><div class="ttdeci">__IO uint32_t LCKR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:473</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_a2b671a94c63a612f81e0e9de8152d01c"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a2b671a94c63a612f81e0e9de8152d01c">GPIO_TypeDef::MODER</a></div><div class="ttdeci">__IO uint32_t MODER</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:466</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_a328d16cc6213783ede54e4059ffd50a3"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a328d16cc6213783ede54e4059ffd50a3">GPIO_TypeDef::OSPEEDR</a></div><div class="ttdeci">__IO uint32_t OSPEEDR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:468</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_a328d2fe9ef1d513c3a97d30f98f0047c"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a328d2fe9ef1d513c3a97d30f98f0047c">GPIO_TypeDef::IDR</a></div><div class="ttdeci">__IO uint32_t IDR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:470</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_a9543592bda60cb5261075594bdeedac9"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a9543592bda60cb5261075594bdeedac9">GPIO_TypeDef::OTYPER</a></div><div class="ttdeci">__IO uint32_t OTYPER</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:467</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_ab67c1158c04450d19ad483dcd2192e43"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#ab67c1158c04450d19ad483dcd2192e43">GPIO_TypeDef::AFR</a></div><div class="ttdeci">__IO uint32_t AFR[2]</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:474</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_abeed38529bd7b8de082e490e5d4f1727"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#abeed38529bd7b8de082e490e5d4f1727">GPIO_TypeDef::PUPDR</a></div><div class="ttdeci">__IO uint32_t PUPDR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:469</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_abff7fffd2b5a718715a130006590c75c"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#abff7fffd2b5a718715a130006590c75c">GPIO_TypeDef::ODR</a></div><div class="ttdeci">__IO uint32_t ODR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:471</div></div>
-<div class="ttc" id="astruct_g_p_i_o___type_def_html_ac25dd6b9e3d55e17589195b461c5ec80"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#ac25dd6b9e3d55e17589195b461c5ec80">GPIO_TypeDef::BSRR</a></div><div class="ttdeci">__IO uint32_t BSRR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:472</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_a0d233d720f18ae2050f9131fa6faf7c6"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a0d233d720f18ae2050f9131fa6faf7c6">GPIO_TypeDef::OSPEEDR</a></div><div class="ttdeci">__IO uint32_t OSPEEDR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:468</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_a2245603433e102f0fd8a85f7de020755"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a2245603433e102f0fd8a85f7de020755">GPIO_TypeDef::AFR</a></div><div class="ttdeci">__IO uint32_t AFR[2]</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:474</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_a44ada3bfbe891e2efc1e06bda4c8014e"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a44ada3bfbe891e2efc1e06bda4c8014e">GPIO_TypeDef::PUPDR</a></div><div class="ttdeci">__IO uint32_t PUPDR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:469</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_a6fb78f4a978a36032cdeac93ac3c9c8b"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a6fb78f4a978a36032cdeac93ac3c9c8b">GPIO_TypeDef::ODR</a></div><div class="ttdeci">__IO uint32_t ODR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:471</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_a910885e4d881c3a459dd11640237107f"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a910885e4d881c3a459dd11640237107f">GPIO_TypeDef::OTYPER</a></div><div class="ttdeci">__IO uint32_t OTYPER</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:467</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_a95a59d4b1d52be521f3246028be32f3e"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">GPIO_TypeDef::LCKR</a></div><div class="ttdeci">__IO uint32_t LCKR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:473</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_aab918bfbfae459789db1fd0b220c7f21"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#aab918bfbfae459789db1fd0b220c7f21">GPIO_TypeDef::BRR</a></div><div class="ttdeci">__IO uint32_t BRR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:475</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_ac2505d096b6b650f1647b8e0ff8b196b"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#ac2505d096b6b650f1647b8e0ff8b196b">GPIO_TypeDef::MODER</a></div><div class="ttdeci">__IO uint32_t MODER</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:466</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_acd6f21e08912b484c030ca8b18e11cd6"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#acd6f21e08912b484c030ca8b18e11cd6">GPIO_TypeDef::BSRR</a></div><div class="ttdeci">__IO uint32_t BSRR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:472</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html_acf11156409414ad8841bb0b62959ee96"><div class="ttname"><a href="struct_g_p_i_o___type_def.html#acf11156409414ad8841bb0b62959ee96">GPIO_TypeDef::IDR</a></div><div class="ttdeci">__IO uint32_t IDR</div><div class="ttdef"><b>Definition:</b> stm32g431xx.h:470</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

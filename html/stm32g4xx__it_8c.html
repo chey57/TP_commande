@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Documentation_tp_commande: Core/Src/stm32g4xx_it.c File Reference</title>
+<title>My Project: NUCLEO-G431RB-MSC_Shell/Core/Src/stm32g4xx_it.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Documentation_tp_commande
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_53abe0c4bb122d45ab0623343a241ee3.html">NUCLEO-G431RB-MSC_Shell</a></li><li class="navelem"><a class="el" href="dir_6346ef0ffbde58298e5fa93243e878f6.html">Core</a></li><li class="navelem"><a class="el" href="dir_9aabb1807a850a0f66b5c0a0e1cd2960.html">Src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,6 +84,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stm32g4xx__it_8h_source.html">stm32g4xx_it.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="encodeur_8h_source.html">encodeur.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -123,6 +124,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PendSV_Handler</b> (v
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SysTick_Handler</b> (void)</td></tr>
 <tr class="memdesc:ab5e09814056d617c521549e542639b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handles System tick timer. <br /></td></tr>
 <tr class="separator:ab5e09814056d617c521549e542639b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6fac3d670a4860ebec8a961d5c4a73"><td class="memItemLeft" align="right" valign="top"><a id="a7b6fac3d670a4860ebec8a961d5c4a73" name="a7b6fac3d670a4860ebec8a961d5c4a73"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DMA1_Channel1_IRQHandler</b> (void)</td></tr>
+<tr class="memdesc:a7b6fac3d670a4860ebec8a961d5c4a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handles DMA1 channel1 global interrupt. <br /></td></tr>
+<tr class="separator:a7b6fac3d670a4860ebec8a961d5c4a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8fca6e2f18e433a9fbc3d2dcc0b411"><td class="memItemLeft" align="right" valign="top"><a id="a3e8fca6e2f18e433a9fbc3d2dcc0b411" name="a3e8fca6e2f18e433a9fbc3d2dcc0b411"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ADC1_2_IRQHandler</b> (void)</td></tr>
+<tr class="memdesc:a3e8fca6e2f18e433a9fbc3d2dcc0b411"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handles ADC1 and ADC2 global interrupt. <br /></td></tr>
+<tr class="separator:a3e8fca6e2f18e433a9fbc3d2dcc0b411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e51d2183b5230cbd5481f8867adce9"><td class="memItemLeft" align="right" valign="top"><a id="ac8e51d2183b5230cbd5481f8867adce9" name="ac8e51d2183b5230cbd5481f8867adce9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TIM3_IRQHandler</b> (void)</td></tr>
+<tr class="memdesc:ac8e51d2183b5230cbd5481f8867adce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handles TIM3 global interrupt. <br /></td></tr>
+<tr class="separator:ac8e51d2183b5230cbd5481f8867adce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7133f3f78767503641d307386e68bd28"><td class="memItemLeft" align="right" valign="top"><a id="a7133f3f78767503641d307386e68bd28" name="a7133f3f78767503641d307386e68bd28"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TIM4_IRQHandler</b> (void)</td></tr>
+<tr class="memdesc:a7133f3f78767503641d307386e68bd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handles TIM4 global interrupt. <br /></td></tr>
+<tr class="separator:a7133f3f78767503641d307386e68bd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ca6fd0e6f77921dd1123539857ba0a8"><td class="memItemLeft" align="right" valign="top"><a id="a0ca6fd0e6f77921dd1123539857ba0a8" name="a0ca6fd0e6f77921dd1123539857ba0a8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>USART2_IRQHandler</b> (void)</td></tr>
 <tr class="memdesc:a0ca6fd0e6f77921dd1123539857ba0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function handles USART2 global interrupt / USART2 wake-up interrupt through EXTI line 26. <br /></td></tr>
@@ -134,11 +151,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>TIM6_DAC_IRQHandler</
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a51322ddb267b4729d6b5f2bb05d49fff"><td class="memItemLeft" align="right" valign="top"><a id="a51322ddb267b4729d6b5f2bb05d49fff" name="a51322ddb267b4729d6b5f2bb05d49fff"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>counter</b></td></tr>
+<tr class="separator:a51322ddb267b4729d6b5f2bb05d49fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c126854bb1813d31ab4776b21dcc51f"><td class="memItemLeft" align="right" valign="top"><a id="a1c126854bb1813d31ab4776b21dcc51f" name="a1c126854bb1813d31ab4776b21dcc51f"></a>
+DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hdma_adc1</b></td></tr>
+<tr class="separator:a1c126854bb1813d31ab4776b21dcc51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b804736f5648d52f639b2647d4ed13"><td class="memItemLeft" align="right" valign="top"><a id="a22b804736f5648d52f639b2647d4ed13" name="a22b804736f5648d52f639b2647d4ed13"></a>
+ADC_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hadc1</b></td></tr>
+<tr class="separator:a22b804736f5648d52f639b2647d4ed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3d2c59ee0e3bbae1b99529a154eb62"><td class="memItemLeft" align="right" valign="top"><a id="aac3d2c59ee0e3bbae1b99529a154eb62" name="aac3d2c59ee0e3bbae1b99529a154eb62"></a>
+TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim3</b></td></tr>
+<tr class="separator:aac3d2c59ee0e3bbae1b99529a154eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85788cec5a97ee377e4ee2e74f026484"><td class="memItemLeft" align="right" valign="top"><a id="a85788cec5a97ee377e4ee2e74f026484" name="a85788cec5a97ee377e4ee2e74f026484"></a>
+TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim4</b></td></tr>
+<tr class="separator:a85788cec5a97ee377e4ee2e74f026484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memItemLeft" align="right" valign="top"><a id="aa9479c261d65eecedd3d9582f7f0f89c" name="aa9479c261d65eecedd3d9582f7f0f89c"></a>
-<a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>huart2</b></td></tr>
+UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>huart2</b></td></tr>
 <tr class="separator:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1564492831a79fa18466467c3420c3c3"><td class="memItemLeft" align="right" valign="top"><a id="a1564492831a79fa18466467c3420c3c3" name="a1564492831a79fa18466467c3420c3c3"></a>
-<a class="el" href="struct_t_i_m___handle_type_def.html">TIM_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>htim6</b></td></tr>
+TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim6</b></td></tr>
 <tr class="separator:a1564492831a79fa18466467c3420c3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
