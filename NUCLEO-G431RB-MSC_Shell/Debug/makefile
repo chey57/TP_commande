@@ -60,8 +60,8 @@ all: main-build
 main-build: NUCLEO-G431RB-MSC_Shell.elf secondary-outputs
 
 # Tool invocations
-NUCLEO-G431RB-MSC_Shell.elf NUCLEO-G431RB-MSC_Shell.map: $(OBJS) $(USER_OBJS) C:\Users\cheye\Documents\ENSEA\git\tp_sac\TP_commande\NUCLEO-G431RB-MSC_Shell\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "NUCLEO-G431RB-MSC_Shell.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\cheye\Documents\ENSEA\git\tp_sac\TP_commande\NUCLEO-G431RB-MSC_Shell\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO-G431RB-MSC_Shell.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+NUCLEO-G431RB-MSC_Shell.elf NUCLEO-G431RB-MSC_Shell.map: $(OBJS) $(USER_OBJS) /Users/quentinrolland/Documents/GitHub/TP_commande/NUCLEO-G431RB-MSC_Shell/STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "NUCLEO-G431RB-MSC_Shell.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/quentinrolland/Documents/GitHub/TP_commande/NUCLEO-G431RB-MSC_Shell/STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO-G431RB-MSC_Shell.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

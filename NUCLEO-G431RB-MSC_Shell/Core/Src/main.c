@@ -214,7 +214,7 @@ int main(void)
 	if(HAL_OK != HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED))
 		printf("probleme avec la calibration de l'ADC \r\n");
 
-	if(HAL_OK != HAL_ADC_Start_DMA(&hadc1, ADC_Buffer, ADC_BUF_SIZE))
+	if(HAL_OK != HAL_ADC_Start_DMA(&hadc1, &ADC_Buffer, ADC_BUF_SIZE))
 		printf("probleme avec le demarrage du DMA \r\n");
 
 	if(HAL_OK != HAL_TIM_Base_Start(&htim2))
@@ -331,6 +331,8 @@ int main(void)
 
 			}
 			else if(strcmp(argv[0],"vitesse")==0){
+
+				// la fonction vitesse_de_rotation est appelée périodiquement à chaque interruption du timer3 (dans la fonction ...it.c)
 
 				stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"La vitesse vaut : %.1f tr/min \r\n", vitesse[0]);
 				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
