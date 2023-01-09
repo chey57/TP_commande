@@ -25,7 +25,7 @@ void vitesse_de_rotation(){
 
 	if(htim4.Instance->CNT != 0){
 
-		int varibale =0;
+		int variable =0;
 
 	}
 

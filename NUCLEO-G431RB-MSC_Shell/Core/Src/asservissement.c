@@ -11,9 +11,9 @@
 #include "main.h"
 
 #define ADC_BUF_SIZE 20
-#define K 0
-#define I 0.00118870172705228
-#define Te 0.0000625
+#define K 0.05
+#define I 0.1
+#define Te 0.00003125
 
 /**
  * @brief fonction callback du bouton bleu

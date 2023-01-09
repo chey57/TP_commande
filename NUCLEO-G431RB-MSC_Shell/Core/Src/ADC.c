@@ -10,7 +10,7 @@
 
 
 
-float lecture_courant(uint16_t ADC_Buffer_courant[ADC_BUF_SIZE]){
+float lecture_courant(uint16_t* ADC_Buffer_courant){
 	int sortie_ADC_numerique =0;
 	for(int i=0;i<20;i++){
 		sortie_ADC_numerique = sortie_ADC_numerique + (int)(ADC_Buffer_courant[i]);
