@@ -67,6 +67,8 @@ extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
 
+extern int ADC_flag;
+
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -231,6 +233,8 @@ void ADC1_2_IRQHandler(void)
   /* USER CODE END ADC1_2_IRQn 0 */
   HAL_ADC_IRQHandler(&hadc1);
   /* USER CODE BEGIN ADC1_2_IRQn 1 */
+
+  ADC_flag = 1;
 
   /* USER CODE END ADC1_2_IRQn 1 */
 }

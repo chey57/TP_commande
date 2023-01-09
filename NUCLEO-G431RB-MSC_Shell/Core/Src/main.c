@@ -92,6 +92,9 @@ uint32_t counter = 0;
 
 extern float vitesse[1];
 
+int start_current_ctrl_flag = 0;
+int ADC_flag = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -160,8 +163,8 @@ int main(void)
 	int 		newCmdReady = 0;
 	int 		alpha = 0;
 	float 		courant = 0;
-	float 		epsilon_courant_n_1[1]={0}; //erreur courant de l'acquisition précédente n-1
-	float 		alpha2_n_1[1]={0}; //alpha 2 de l'acquisition précédente n-1
+	float 		epsilon_courant_n_1 = 0; //erreur courant de l'acquisition précédente n-1
+	float 		alpha2_n_1 = 0.5; //alpha 2 de l'acquisition précédente n-1
 
 
   /* USER CODE END 1 */
@@ -338,11 +341,15 @@ int main(void)
 				HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
 			}
 			else if (strcmp(argv[0],"commande")==0){
+
 				if (strcmp(argv[1],"courant")==0){
+
 					int commande_courant=atoi(argv[2]);
+
 					stringSize = snprintf(uartTxBuffer, UART_TX_BUFFER_SIZE,"courant commande %d \r\n ", commande_courant);
 					HAL_UART_Transmit(&huart2, uartTxBuffer, stringSize, HAL_MAX_DELAY);
 
+					start_current_ctrl_flag = 1;
 				}
 
 			}
@@ -364,6 +371,16 @@ int main(void)
 
 
 		/*********************** BEGIN ASSERV **************************/
+
+		//asserv courant
+
+		if (start_current_ctrl_flag){
+			if (ADC_flag){
+				int alpha_commande_courant = commande_courant(commande_courant, lecture_courant(ADC_Buffer), epsilon_courant_n_1, alpha2_n_1);
+				changement_alpha(alpha_commande_courant);
+				ADC_flag = 0;
+			}
+		}
 
 		/*********************** END ASSERV ****************************/
 
