@@ -11,7 +11,7 @@
 #include "main.h"
 
 #define ADC_BUF_SIZE 20
-#define K 0.05
+#define K 0.1
 #define I 0.1
 #define Te 0.00003125
 
