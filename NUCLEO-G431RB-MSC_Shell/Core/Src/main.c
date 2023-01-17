@@ -115,7 +115,11 @@ static void MX_TIM3_Init(void);
 /* USER CODE BEGIN 0 */
 
 
-
+/**
+ * @brief Fonction qui permet de mettre en route les signaux PWM
+ * @param  None
+ * @retval None
+ */
 void start_PWM(){
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -123,6 +127,12 @@ void start_PWM(){
 	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
 }
 
+
+/**
+ * @brief Fonction qui permet de stopper les signaux PWM
+ * @param  None
+ * @retval None
+ */
 void stop_PWM(){
 	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
@@ -130,6 +140,12 @@ void stop_PWM(){
 	HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
 }
 
+
+/**
+ * @brief Fonction qui permet de changer la valeur du rapport cyclique des signaux PWM
+ * @param  int alpha : rapport cyclique entre 0 et 100
+ * @retval None
+ */
 void changement_alpha(int alpha){
 	if (alpha > 100){
 		alpha = 100;
@@ -138,7 +154,11 @@ void changement_alpha(int alpha){
 	TIM1->CCR2=(5312-TIM1->CCR1);
 }
 
-
+/**
+ * @brief Fonction qui permet de lancer le hacheur
+ * @param  None
+ * @retval None
+ */
 void GPIO_ISO_RESET(){
 	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
 	HAL_Delay(1);
@@ -160,8 +180,6 @@ int main(void)
 	char* 		argv[MAX_ARGS];
 	int		 	argc = 0;
 	char*		token;
-	int 		newCmdReady = 0;
-	int 		alpha = 0;
 	float 		courant = 0;
 	float 		epsilon_courant_n_1 = 0; //erreur courant de l'acquisition précédente n-1
 	float 		alpha2_n_1 = 0.5; //alpha 2 de l'acquisition précédente n-1
