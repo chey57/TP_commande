@@ -1,4 +1,4 @@
-/*
+/**
  * @file : ADC.c
  *
  *  Created on: Dec 5, 2022

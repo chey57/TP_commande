@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['debugmon_5fhandler_0',['DebugMon_Handler',['../stm32g4xx__it_8h.html#adbdfb05858cc36fc520974df37ec3cb0',1,'DebugMon_Handler(void):&#160;stm32g4xx_it.c'],['../stm32g4xx__it_8c.html#adbdfb05858cc36fc520974df37ec3cb0',1,'DebugMon_Handler(void):&#160;stm32g4xx_it.c']]],
-  ['dma1_5fchannel1_5firqhandler_1',['DMA1_Channel1_IRQHandler',['../stm32g4xx__it_8h.html#a7b6fac3d670a4860ebec8a961d5c4a73',1,'DMA1_Channel1_IRQHandler(void):&#160;stm32g4xx_it.c'],['../stm32g4xx__it_8c.html#a7b6fac3d670a4860ebec8a961d5c4a73',1,'DMA1_Channel1_IRQHandler(void):&#160;stm32g4xx_it.c']]]
+  ['changement_5falpha_0',['changement_alpha',['../main_8c.html#a4c5bad61c6261ab9ffb5d70db6911921',1,'main.c']]],
+  ['commande_5fcourant_1',['commande_courant',['../asservissement_8h.html#a89db68cb1bc818915907016f8c02c7bd',1,'commande_courant(int courant_mA, float mesure_courant, float epsilon_courant_n_1, float alpha2_n_1):&#160;asservissement.c'],['../asservissement_8c.html#a89db68cb1bc818915907016f8c02c7bd',1,'commande_courant(int courant_mA, float mesure_courant, float epsilon_courant_n_1, float alpha2_n_1):&#160;asservissement.c']]]
 ];

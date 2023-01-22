@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['memmanage_5fhandler_1',['MemManage_Handler',['../stm32g4xx__it_8h.html#a3150f74512510287a942624aa9b44cc5',1,'MemManage_Handler(void):&#160;stm32g4xx_it.c'],['../stm32g4xx__it_8c.html#a3150f74512510287a942624aa9b44cc5',1,'MemManage_Handler(void):&#160;stm32g4xx_it.c']]]
+  ['gpio_5fiso_5freset_0',['GPIO_ISO_RESET',['../main_8c.html#a04d96b92ee32d6e4af942a9dd5367c8c',1,'main.c']]]
 ];

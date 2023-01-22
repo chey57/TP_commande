@@ -1,14 +1,13 @@
-/*
- * ADC.h
+/**
+ * @file : ADC.h
  *
- *  Created on: Dec 5, 2022
- *      Author: cheye
+ *	@brief : Created on: Dec 5, 2022
+ *  @author: cheyenne
+ *
  */
 
 #ifndef INC_ADC_H_
 #define INC_ADC_H_
-
-#include "main.h"
 
 #define ADC_BUF_SIZE 20
 

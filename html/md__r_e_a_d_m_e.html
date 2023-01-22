@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: TP_commande : Quentin ROLLAND et Cheyenne PEREZ</title>
+<title>TP_systeme_dacquisition_commande: TP_commande : Quentin ROLLAND et Cheyenne PEREZ</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">TP_systeme_dacquisition_commande
    </div>
   </td>
  </tr>
@@ -76,7 +76,8 @@ $(function() {
 <p >2ème séance : 6.1 et 6.2 fait + changement de alpha avec le shell, début de la commande start avec GPIO</p>
 <p >3ème séance : 6.3 commande start fait avec le shell et le blue button (les 2 fonctionnent) 6.4 Premiers tests avec le moteur : rapport cylique à 50 à chaque lancement. PB : pic de courant lorsque l'on change le rapport cyclique (s'il y a un trop gros écart) 6.5 Définition de la vitesse : fait avec l'UART (ajout de la condition si alpha est supérieur à 100) 7.1 Commande de l'ADC entamée : initialisation de l'ADC, DMA et Timer 2, création de la commande dans le shell. Pour l'instant le retour de la mesure retourne 0. Il faudra vérifier la cohérence de la valeur récupérée dans le buffer par le DMA et vérifier que le shell envoie bien la bonne valeur.</p>
 <p >4ème séance : 7.1 terminé : nous avons réussi à avoir une bonne valeur du courant en sortie du moteur (vérifiée à l'oscillo)</p>
-<p >5ème séance : début encodeur (activation du timer4 et ecriture des fonctions pour calculer la vitesse) On a une vitesse de 0tr/min et le pb est que l'on ne rentre pas dans la fonction callback qui appelle le timer3 donc ne modifie pas la variable vitesse puisque le compteur n'est pas lancé </p>
+<p >5ème séance : début encodeur (activation du timer4 et ecriture des fonctions pour calculer la vitesse) On a une vitesse de 0tr/min et le pb est que l'on ne rentre pas dans la fonction callback qui appelle le timer3 donc ne modifie pas la variable vitesse puisque le compteur n'est pas lancé</p>
+<p >6ème séance : fin encodeur, acquisition d'une vitesse de rotation du moteur cohérente Pour la prochaine fois : finir asservissement en courant(essayer la fonction dans le main (shell : commande courant) et savoir quelle valeur a notre alpha en sortie de la fonction -&gt; gérer alpha : attention variable globale) + faire asservissement vitesse. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

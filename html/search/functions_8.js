@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['pendsv_5fhandler_0',['PendSV_Handler',['../stm32g4xx__it_8h.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;stm32g4xx_it.c'],['../stm32g4xx__it_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;stm32g4xx_it.c']]]
+  ['itm_5fcheckchar_0',['ITM_CheckChar',['../group___c_m_s_i_s__core___debug_functions.html#gae61ce9ca5917735325cd93b0fb21dd29',1,'core_armv81mml.h']]],
+  ['itm_5freceivechar_1',['ITM_ReceiveChar',['../group___c_m_s_i_s__core___debug_functions.html#gac3ee2c30a1ac4ed34c8a866a17decd53',1,'core_armv81mml.h']]],
+  ['itm_5fsendchar_2',['ITM_SendChar',['../group___c_m_s_i_s__core___debug_functions.html#gac90a497bd64286b84552c2c553d3419e',1,'core_armv81mml.h']]]
 ];

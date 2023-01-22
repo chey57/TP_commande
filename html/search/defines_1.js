@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['external_5fclock_5fvalue_0',['EXTERNAL_CLOCK_VALUE',['../stm32g4xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'stm32g4xx_hal_conf.h']]]
+  ['assert_5fparam_0',['assert_param',['../stm32g4xx__hal__conf_8h.html#a631dea7b230e600555f979c62af1de21',1,'stm32g4xx_hal_conf.h']]]
 ];

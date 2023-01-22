@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: NUCLEO-G431RB-MSC_Shell/Core/Src/main.c File Reference</title>
+<title>TP_systeme_dacquisition_commande: NUCLEO-G431RB-MSC_Shell/Core/Src/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">TP_systeme_dacquisition_commande
    </div>
   </td>
  </tr>
@@ -88,6 +88,8 @@ $(function() {
 <code>#include &quot;stdio.h&quot;</code><br />
 <code>#include &quot;stdlib.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="encodeur_8h_source.html">encodeur.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_a_d_c_8h_source.html">ADC.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="asservissement_8h_source.html">asservissement.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -121,33 +123,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a70af21c671abfcc773614a9a4f63d920"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a> (void)</td></tr>
 <tr class="memdesc:a70af21c671abfcc773614a9a4f63d920"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Clock Configuration.  <a href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">More...</a><br /></td></tr>
 <tr class="separator:a70af21c671abfcc773614a9a4f63d920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc0471f81d01eeb7ce92087321f5d7d7"><td class="memItemLeft" align="right" valign="top"><a id="acc0471f81d01eeb7ce92087321f5d7d7" name="acc0471f81d01eeb7ce92087321f5d7d7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>start_PWM</b> ()</td></tr>
+<tr class="memitem:acc0471f81d01eeb7ce92087321f5d7d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#acc0471f81d01eeb7ce92087321f5d7d7">start_PWM</a> ()</td></tr>
+<tr class="memdesc:acc0471f81d01eeb7ce92087321f5d7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de mettre en route les signaux PWM.  <a href="main_8c.html#acc0471f81d01eeb7ce92087321f5d7d7">More...</a><br /></td></tr>
 <tr class="separator:acc0471f81d01eeb7ce92087321f5d7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46410d8579351c44306a0986025f244a"><td class="memItemLeft" align="right" valign="top"><a id="a46410d8579351c44306a0986025f244a" name="a46410d8579351c44306a0986025f244a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>stop_PWM</b> ()</td></tr>
+<tr class="memitem:a46410d8579351c44306a0986025f244a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a46410d8579351c44306a0986025f244a">stop_PWM</a> ()</td></tr>
+<tr class="memdesc:a46410d8579351c44306a0986025f244a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de stopper les signaux PWM.  <a href="main_8c.html#a46410d8579351c44306a0986025f244a">More...</a><br /></td></tr>
 <tr class="separator:a46410d8579351c44306a0986025f244a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c5bad61c6261ab9ffb5d70db6911921"><td class="memItemLeft" align="right" valign="top"><a id="a4c5bad61c6261ab9ffb5d70db6911921" name="a4c5bad61c6261ab9ffb5d70db6911921"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>changement_alpha</b> (int alpha)</td></tr>
+<tr class="memitem:a4c5bad61c6261ab9ffb5d70db6911921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4c5bad61c6261ab9ffb5d70db6911921">changement_alpha</a> (int alpha)</td></tr>
+<tr class="memdesc:a4c5bad61c6261ab9ffb5d70db6911921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de changer la valeur du rapport cyclique des signaux PWM.  <a href="main_8c.html#a4c5bad61c6261ab9ffb5d70db6911921">More...</a><br /></td></tr>
 <tr class="separator:a4c5bad61c6261ab9ffb5d70db6911921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3a5b9b465ad3cce738d1aee2f09cfc2"><td class="memItemLeft" align="right" valign="top"><a id="ae3a5b9b465ad3cce738d1aee2f09cfc2" name="ae3a5b9b465ad3cce738d1aee2f09cfc2"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>conversion_ADC</b> (int sortie_ADC_numerique)</td></tr>
-<tr class="separator:ae3a5b9b465ad3cce738d1aee2f09cfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04d96b92ee32d6e4af942a9dd5367c8c"><td class="memItemLeft" align="right" valign="top"><a id="a04d96b92ee32d6e4af942a9dd5367c8c" name="a04d96b92ee32d6e4af942a9dd5367c8c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_ISO_RESET</b> ()</td></tr>
+<tr class="memitem:a04d96b92ee32d6e4af942a9dd5367c8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a04d96b92ee32d6e4af942a9dd5367c8c">GPIO_ISO_RESET</a> ()</td></tr>
+<tr class="memdesc:a04d96b92ee32d6e4af942a9dd5367c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de lancer le hacheur.  <a href="main_8c.html#a04d96b92ee32d6e4af942a9dd5367c8c">More...</a><br /></td></tr>
 <tr class="separator:a04d96b92ee32d6e4af942a9dd5367c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">More...</a><br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae494a9643f29b87d6d81e5264e60e57b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a> (UART_HandleTypeDef *huart)</td></tr>
-<tr class="memdesc:ae494a9643f29b87d6d81e5264e60e57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction de gestion de la communication (uart) entre le programme et l'utilisateur.  <a href="main_8c.html#ae494a9643f29b87d6d81e5264e60e57b">More...</a><br /></td></tr>
-<tr class="separator:ae494a9643f29b87d6d81e5264e60e57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0cd91fd3a9608559c2a87a8ba6cba55f">HAL_GPIO_EXTI_Callback</a> (uint16_t GPIO_Pin)</td></tr>
-<tr class="memdesc:a0cd91fd3a9608559c2a87a8ba6cba55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction callback du bouton bleu  <a href="main_8c.html#a0cd91fd3a9608559c2a87a8ba6cba55f">More...</a><br /></td></tr>
-<tr class="separator:a0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8a3b0ad512a6e6c6157440b68d395eac">HAL_TIM_PeriodElapsedCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
-<tr class="memdesc:a8a3b0ad512a6e6c6157440b68d395eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Period elapsed callback in non blocking mode.  <a href="main_8c.html#a8a3b0ad512a6e6c6157440b68d395eac">More...</a><br /></td></tr>
-<tr class="separator:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae494a9643f29b87d6d81e5264e60e57b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_a_r_t___exported___functions___group2.html#gae494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a> (<a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a> *huart)</td></tr>
+<tr class="memdesc:gae494a9643f29b87d6d81e5264e60e57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction de gestion de la communication (uart) entre le programme et l'utilisateur.  <a href="group___u_a_r_t___exported___functions___group2.html#gae494a9643f29b87d6d81e5264e60e57b">More...</a><br /></td></tr>
+<tr class="separator:gae494a9643f29b87d6d81e5264e60e57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o___exported___functions___group2.html#ga0cd91fd3a9608559c2a87a8ba6cba55f">HAL_GPIO_EXTI_Callback</a> (uint16_t GPIO_Pin)</td></tr>
+<tr class="memdesc:ga0cd91fd3a9608559c2a87a8ba6cba55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction callback du bouton bleu  <a href="group___g_p_i_o___exported___functions___group2.html#ga0cd91fd3a9608559c2a87a8ba6cba55f">More...</a><br /></td></tr>
+<tr class="separator:ga0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a3b0ad512a6e6c6157440b68d395eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___t_i_m___exported___functions___group9.html#ga8a3b0ad512a6e6c6157440b68d395eac">HAL_TIM_PeriodElapsedCallback</a> (<a class="el" href="struct_t_i_m___handle_type_def.html">TIM_HandleTypeDef</a> *htim)</td></tr>
+<tr class="memdesc:ga8a3b0ad512a6e6c6157440b68d395eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Period elapsed callback in non blocking mode.  <a href="group___t_i_m___exported___functions___group9.html#ga8a3b0ad512a6e6c6157440b68d395eac">More...</a><br /></td></tr>
+<tr class="separator:ga8a3b0ad512a6e6c6157440b68d395eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
 <tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <a href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">More...</a><br /></td></tr>
 <tr class="separator:a1730ffe1e560465665eb47d9264826f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,25 +154,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_ISO_RESET</b> ()
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a22b804736f5648d52f639b2647d4ed13"><td class="memItemLeft" align="right" valign="top"><a id="a22b804736f5648d52f639b2647d4ed13" name="a22b804736f5648d52f639b2647d4ed13"></a>
-ADC_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hadc1</b></td></tr>
+<a class="el" href="struct_a_d_c___handle_type_def.html">ADC_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>hadc1</b></td></tr>
 <tr class="separator:a22b804736f5648d52f639b2647d4ed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c126854bb1813d31ab4776b21dcc51f"><td class="memItemLeft" align="right" valign="top"><a id="a1c126854bb1813d31ab4776b21dcc51f" name="a1c126854bb1813d31ab4776b21dcc51f"></a>
-DMA_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hdma_adc1</b></td></tr>
+<a class="el" href="group___d_m_a___exported___types.html#ga41b754a906b86bce54dc79938970138b">DMA_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>hdma_adc1</b></td></tr>
 <tr class="separator:a1c126854bb1813d31ab4776b21dcc51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25fc663547539bc49fecc0011bd76ab5"><td class="memItemLeft" align="right" valign="top"><a id="a25fc663547539bc49fecc0011bd76ab5" name="a25fc663547539bc49fecc0011bd76ab5"></a>
-TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim1</b></td></tr>
+<a class="el" href="struct_t_i_m___handle_type_def.html">TIM_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>htim1</b></td></tr>
 <tr class="separator:a25fc663547539bc49fecc0011bd76ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c80fd5510e2990a59a5c90d745c716c"><td class="memItemLeft" align="right" valign="top"><a id="a2c80fd5510e2990a59a5c90d745c716c" name="a2c80fd5510e2990a59a5c90d745c716c"></a>
-TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim2</b></td></tr>
+<a class="el" href="struct_t_i_m___handle_type_def.html">TIM_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>htim2</b></td></tr>
 <tr class="separator:a2c80fd5510e2990a59a5c90d745c716c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac3d2c59ee0e3bbae1b99529a154eb62"><td class="memItemLeft" align="right" valign="top"><a id="aac3d2c59ee0e3bbae1b99529a154eb62" name="aac3d2c59ee0e3bbae1b99529a154eb62"></a>
-TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim3</b></td></tr>
+<a class="el" href="struct_t_i_m___handle_type_def.html">TIM_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>htim3</b></td></tr>
 <tr class="separator:aac3d2c59ee0e3bbae1b99529a154eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85788cec5a97ee377e4ee2e74f026484"><td class="memItemLeft" align="right" valign="top"><a id="a85788cec5a97ee377e4ee2e74f026484" name="a85788cec5a97ee377e4ee2e74f026484"></a>
-TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>htim4</b></td></tr>
+<a class="el" href="struct_t_i_m___handle_type_def.html">TIM_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>htim4</b></td></tr>
 <tr class="separator:a85788cec5a97ee377e4ee2e74f026484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memItemLeft" align="right" valign="top"><a id="aa9479c261d65eecedd3d9582f7f0f89c" name="aa9479c261d65eecedd3d9582f7f0f89c"></a>
-UART_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>huart2</b></td></tr>
+<a class="el" href="group___u_a_r_t___exported___types.html#ga5de4a49eb132735325e706f406c69d6e">UART_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><b>huart2</b></td></tr>
 <tr class="separator:aa9479c261d65eecedd3d9582f7f0f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b893859891afe33d4bba72ba06fd381"><td class="memItemLeft" align="right" valign="top"><a id="a8b893859891afe33d4bba72ba06fd381" name="a8b893859891afe33d4bba72ba06fd381"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>prompt</b> [] =&quot;user@Nucleo-STM32G431&gt;&gt;&quot;</td></tr>
@@ -215,9 +214,15 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_Buffer</b> [A
 <tr class="memitem:a51322ddb267b4729d6b5f2bb05d49fff"><td class="memItemLeft" align="right" valign="top"><a id="a51322ddb267b4729d6b5f2bb05d49fff" name="a51322ddb267b4729d6b5f2bb05d49fff"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>counter</b> = 0</td></tr>
 <tr class="separator:a51322ddb267b4729d6b5f2bb05d49fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe8e376f26c3acb8907b5dd8f596ed23"><td class="memItemLeft" align="right" valign="top"><a id="afe8e376f26c3acb8907b5dd8f596ed23" name="afe8e376f26c3acb8907b5dd8f596ed23"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>vitesse</b></td></tr>
-<tr class="separator:afe8e376f26c3acb8907b5dd8f596ed23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c997fc8f7b16c2260859749cb85e40"><td class="memItemLeft" align="right" valign="top"><a id="aa0c997fc8f7b16c2260859749cb85e40" name="aa0c997fc8f7b16c2260859749cb85e40"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>vitesse</b> [1]</td></tr>
+<tr class="separator:aa0c997fc8f7b16c2260859749cb85e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ab7d4d6b783c40b3f55eeae4c88979"><td class="memItemLeft" align="right" valign="top"><a id="a63ab7d4d6b783c40b3f55eeae4c88979" name="a63ab7d4d6b783c40b3f55eeae4c88979"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>start_current_ctrl_flag</b> = 0</td></tr>
+<tr class="separator:a63ab7d4d6b783c40b3f55eeae4c88979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6749a33632d3c4d81bcb386db388a023"><td class="memItemLeft" align="right" valign="top"><a id="a6749a33632d3c4d81bcb386db388a023" name="a6749a33632d3c4d81bcb386db388a023"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_flag</b> = 0</td></tr>
+<tr class="separator:a6749a33632d3c4d81bcb386db388a023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >: Main program body </p>
@@ -225,6 +230,38 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>vitesse</b></td><
 <p>Copyright (c) 2022 STMicroelectronics. All rights reserved.</p>
 <p >This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a4c5bad61c6261ab9ffb5d70db6911921" name="a4c5bad61c6261ab9ffb5d70db6911921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c5bad61c6261ab9ffb5d70db6911921">&#9670;&#160;</a></span>changement_alpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void changement_alpha </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>alpha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet de changer la valeur du rapport cyclique des signaux PWM. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>alpha : rapport cyclique entre 0 et 100 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1730ffe1e560465665eb47d9264826f9" name="a1730ffe1e560465665eb47d9264826f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&#160;</a></span>Error_Handler()</h2>
 
@@ -251,93 +288,25 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>vitesse</b></td><
 
 </div>
 </div>
-<a id="a0cd91fd3a9608559c2a87a8ba6cba55f" name="a0cd91fd3a9608559c2a87a8ba6cba55f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cd91fd3a9608559c2a87a8ba6cba55f">&#9670;&#160;</a></span>HAL_GPIO_EXTI_Callback()</h2>
+<a id="a04d96b92ee32d6e4af942a9dd5367c8c" name="a04d96b92ee32d6e4af942a9dd5367c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d96b92ee32d6e4af942a9dd5367c8c">&#9670;&#160;</a></span>GPIO_ISO_RESET()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void HAL_GPIO_EXTI_Callback </td>
+          <td class="memname">void GPIO_ISO_RESET </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>fonction callback du bouton bleu </p>
-<dl class="section note"><dt>Note</dt><dd>La fonction est appelee lorsque l'utilisateur appui sur le bouton bleu et provoque l'activation du GPIO pour l'allumage du hacheur (pin 33) GPIOC Pin 0 à 1 pendant au moins 2micro s d'après la doc </dd></dl>
+<p>Fonction qui permet de lancer le hacheur. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">GPIO_Pin</td><td>: Pin handler </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
     <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8a3b0ad512a6e6c6157440b68d395eac" name="a8a3b0ad512a6e6c6157440b68d395eac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a3b0ad512a6e6c6157440b68d395eac">&#9670;&#160;</a></span>HAL_TIM_PeriodElapsedCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HAL_TIM_PeriodElapsedCallback </td>
-          <td>(</td>
-          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
-          <td class="paramname"><em>htim</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Period elapsed callback in non blocking mode. </p>
-<dl class="section note"><dt>Note</dt><dd>This function is called when TIM6 interrupt took place, inside HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment a global variable "uwTick" used as application time base. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">htim</td><td>: TIM handle </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae494a9643f29b87d6d81e5264e60e57b" name="ae494a9643f29b87d6d81e5264e60e57b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae494a9643f29b87d6d81e5264e60e57b">&#9670;&#160;</a></span>HAL_UART_RxCpltCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HAL_UART_RxCpltCallback </td>
-          <td>(</td>
-          <td class="paramtype">UART_HandleTypeDef *&#160;</td>
-          <td class="paramname"><em>huart</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>fonction de gestion de la communication (uart) entre le programme et l'utilisateur. </p>
-<dl class="section note"><dt>Note</dt><dd>La fonction est appelee lorsque le programme detecte une entree de l'utilisateur sur le shell </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">huart</td><td>: UART handle </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,6 +345,68 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>vitesse</b></td><
 
 </div>
 </div>
+<a id="acc0471f81d01eeb7ce92087321f5d7d7" name="acc0471f81d01eeb7ce92087321f5d7d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc0471f81d01eeb7ce92087321f5d7d7">&#9670;&#160;</a></span>start_PWM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void start_PWM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet de mettre en route les signaux PWM. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a46410d8579351c44306a0986025f244a" name="a46410d8579351c44306a0986025f244a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46410d8579351c44306a0986025f244a">&#9670;&#160;</a></span>stop_PWM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stop_PWM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet de stopper les signaux PWM. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a70af21c671abfcc773614a9a4f63d920" name="a70af21c671abfcc773614a9a4f63d920"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70af21c671abfcc773614a9a4f63d920">&#9670;&#160;</a></span>SystemClock_Config()</h2>
 
@@ -400,7 +431,7 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>vitesse</b></td><
   </dd>
 </dl>
 <p >Configure the main internal regulator output voltage</p>
-<p >Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</p>
+<p >Initializes the RCC Oscillators according to the specified parameters in the <a class="el" href="struct_r_c_c___osc_init_type_def.html" title="RCC Internal/External Oscillator (HSE, HSI, LSE and LSI) configuration structure definition.">RCC_OscInitTypeDef</a> structure.</p>
 <p >Initializes the CPU, AHB and APB buses clocks</p>
 
 </div>
